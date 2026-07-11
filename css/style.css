@@ -1,0 +1,610 @@
+/* =================================================
+   TravelVerse
+   Common Style Sheet
+   File: style.css
+================================================= */
+
+
+
+/* ==========================
+   ROOT VARIABLES
+========================== */
+
+
+:root {
+
+    --primary: #6C63FF;
+
+    --secondary: #8A2BE2;
+
+    --accent: #00C2FF;
+
+    --dark: #0F172A;
+
+    --light: #ffffff;
+
+    --text: #334155;
+
+    --glass:
+    rgba(255,255,255,0.12);
+
+    --shadow:
+    0 20px 40px rgba(0,0,0,0.15);
+
+    --radius:20px;
+
+}
+
+
+
+
+
+
+/* ==========================
+   RESET
+========================== */
+
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+    background:#f8fafc;
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+
+
+
+/* ==========================
+   SCROLL BAR
+========================== */
+
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+    background:#eee;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+        var(--primary),
+        var(--secondary)
+    );
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   COMMON BUTTON
+========================== */
+
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    padding:
+
+    12px 28px;
+
+
+    border-radius:50px;
+
+
+    font-size:15px;
+
+    font-weight:600;
+
+
+    transition:0.3s ease;
+
+
+    cursor:pointer;
+
+
+    border:none;
+
+
+}
+
+
+
+
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   GRADIENT BUTTON
+========================== */
+
+
+.gradient-btn{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+
+    color:white;
+
+
+    box-shadow:
+
+    0 10px 25px
+    rgba(108,99,255,.35);
+
+
+}
+
+
+
+
+
+.gradient-btn:hover{
+
+
+    box-shadow:
+
+    0 15px 35px
+    rgba(108,99,255,.55);
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   GLASS CARD
+========================== */
+
+
+.glass-card{
+
+
+    background:
+
+    rgba(255,255,255,0.15);
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+    border:
+
+    1px solid
+    rgba(255,255,255,.2);
+
+
+
+    border-radius:
+
+    var(--radius);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   SECTION TITLE
+========================== */
+
+
+.section-title{
+
+
+    text-align:center;
+
+
+    margin-bottom:50px;
+
+
+}
+
+
+
+.section-title h2{
+
+
+    font-size:38px;
+
+
+    font-weight:700;
+
+
+    background:
+
+
+    linear-gradient(
+
+    135deg,
+
+    var(--primary),
+
+    var(--secondary)
+
+    );
+
+
+    -webkit-background-clip:text;
+
+
+    color:transparent;
+
+
+}
+
+
+
+
+
+.section-title p{
+
+
+    margin-top:10px;
+
+
+    color:#64748b;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================
+   NAVBAR COMMON
+========================== */
+
+
+.navbar{
+
+
+    width:100%;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    padding:
+
+    20px 8%;
+
+
+
+    position:fixed;
+
+
+    top:0;
+
+
+    z-index:1000;
+
+
+
+    background:
+
+    rgba(255,255,255,.75);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+}
+
+
+
+
+
+.logo{
+
+
+    font-size:26px;
+
+
+    font-weight:700;
+
+
+    color:var(--primary);
+
+
+}
+
+
+
+
+
+.logo i{
+
+
+    margin-right:8px;
+
+
+}
+
+
+
+
+
+.navbar nav{
+
+
+    display:flex;
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+.navbar nav a{
+
+
+    font-weight:500;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.navbar nav a:hover{
+
+
+    color:var(--primary);
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   ANIMATION
+========================== */
+
+
+.fade-up{
+
+
+    animation:
+
+    fadeUp 1s ease forwards;
+
+
+}
+
+
+
+
+
+@keyframes fadeUp{
+
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+
+}
+
+
+
+
+
+.float{
+
+
+    animation:
+
+    floating 4s infinite ease-in-out;
+
+
+}
+
+
+
+
+@keyframes floating{
+
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:
+        translateY(-20px);
+
+    }
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   MOBILE COMMON
+========================== */
+
+
+@media(max-width:900px){
+
+
+.navbar{
+
+
+    padding:20px 5%;
+
+
+}
+
+
+.navbar nav{
+
+
+    display:none;
+
+
+}
+
+
+.logo{
+
+
+    font-size:22px;
+
+
+}
+
+
+}
+
+
+
+

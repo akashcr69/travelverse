@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TravelVerse | Home</title>
+
+
+<link rel="stylesheet" href="/css/home.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- Navbar -->
+
+<header class="navbar">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-earth-americas"></i>
+
+TravelVerse
+
+</div>
+
+
+
+<div class="search">
+
+<i class="fa-solid fa-search"></i>
+
+<input type="text" placeholder="Search places...">
+
+</div>
+
+
+
+<div class="nav-icons">
+
+
+<i class="fa-solid fa-bell"></i>
+
+
+<i class="fa-solid fa-user"></i>
+
+
+<button onclick="logout()">
+
+Logout
+
+</button>
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+<div class="main">
+
+
+
+<!-- Sidebar -->
+
+
+<aside class="sidebar">
+
+
+<div class="profile-mini">
+
+
+<img src="assets/images/user1.jpg">
+
+
+<h3>Traveler</h3>
+
+
+<p>@travel_user</p>
+
+
+</div>
+
+
+
+<ul>
+
+
+<li>
+<i class="fa-solid fa-house"></i>
+Home
+</li>
+
+
+<li>
+<i class="fa-solid fa-camera"></i>
+My Posts
+</li>
+
+
+<li>
+<i class="fa-solid fa-location-dot"></i>
+Explore Places
+</li>
+
+
+<li>
+<i class="fa-solid fa-star"></i>
+Reviews
+</li>
+
+
+<li>
+<i class="fa-solid fa-heart"></i>
+Saved Places
+</li>
+
+
+<li>
+<i class="fa-solid fa-gear"></i>
+Settings
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+
+
+
+
+
+<!-- Feed -->
+
+
+<section class="feed">
+
+
+
+<div class="create-post">
+
+
+<img src="assets/images/user1.jpg">
+
+
+<input 
+type="text"
+id="postText"
+placeholder="Share your travel story...">
+
+
+
+<button onclick="createPost()">
+
+Post
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div id="postContainer">
+
+
+
+
+
+<div class="post-card">
+
+
+<div class="post-user">
+
+
+<img src="assets/images/user2.jpg">
+
+
+<div>
+
+<h4>Rahim Explorer</h4>
+
+<span>
+📍 Cox's Bazar
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+<img class="post-image"
+src="assets/images/coxs-bazar.jpg">
+
+
+
+<p>
+
+Beautiful sunset at Cox's Bazar 🌅
+
+</p>
+
+
+
+<div class="actions">
+
+
+<button onclick="likePost(this)">
+
+❤️ Like
+
+</button>
+
+
+
+<button>
+
+💬 Comment
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Right Sidebar -->
+
+
+<aside class="rightbar">
+
+
+<h2>
+Trending Places
+</h2>
+
+
+
+<div class="trend-card">
+
+<img src="assets/images/sajek.jpg">
+
+<h4>
+Sajek Valley
+</h4>
+
+
+</div>
+
+
+
+<div class="trend-card">
+
+<img src="assets/images/sundarbans.jpg">
+
+
+<h4>
+Sundarbans
+</h4>
+
+</div>
+
+
+
+
+<div class="trend-card">
+
+
+<img src="assets/images/saint-martin.jpg">
+
+
+<h4>
+Saint Martin
+</h4>
+
+
+</div>
+
+
+
+</aside>
+
+
+
+
+</div>
+
+
+<script src="/js/home.js"></script>
+
+
+</body>
+
+</html>
