@@ -1,0 +1,371 @@
+/* ==========================================
+   TravelVerse
+   Upload Post Page
+   File : upload.css
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f5f7fb;
+
+}
+
+/* ===========================
+        HEADER
+=========================== */
+
+header{
+
+    width:100%;
+    height:80px;
+
+    background:linear-gradient(135deg,#6C63FF,#8A2BE2);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:100;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+
+}
+
+.logo i{
+
+    margin-right:8px;
+
+}
+
+header nav{
+
+    display:flex;
+    gap:30px;
+
+}
+
+header nav a{
+
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+
+}
+
+header nav a:hover{
+
+    color:#ffe082;
+
+}
+
+/* ===========================
+        MAIN CONTAINER
+=========================== */
+
+.container{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:120px auto 40px;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+
+}
+
+/* ===========================
+        UPLOAD CARD
+=========================== */
+
+.upload-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.upload-card h1{
+
+    margin-bottom:25px;
+
+    color:#333;
+
+}
+
+/* ===========================
+      IMAGE PREVIEW
+=========================== */
+
+.image-preview{
+
+    width:100%;
+    height:320px;
+
+    border:3px dashed #d9d9d9;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    margin-bottom:25px;
+
+}
+
+.image-preview img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+/* ===========================
+        FORM
+=========================== */
+
+label{
+
+    display:block;
+
+    margin:18px 0 8px;
+
+    font-weight:600;
+
+    color:#444;
+
+}
+
+input[type="text"],
+select,
+textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus{
+
+    border-color:#6C63FF;
+
+    box-shadow:0 0 10px rgba(108,99,255,.2);
+
+}
+
+input[type="file"]{
+
+    margin-bottom:15px;
+
+}
+
+textarea{
+
+    resize:none;
+
+}
+
+/* ===========================
+        BUTTON
+=========================== */
+
+button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#6C63FF,#8A2BE2);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(108,99,255,.35);
+
+}
+
+button i{
+
+    margin-right:8px;
+
+}
+
+/* ===========================
+        TIPS
+=========================== */
+
+.tips{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    height:fit-content;
+
+}
+
+.tips h2{
+
+    margin-bottom:20px;
+
+    color:#333;
+
+}
+
+.tip{
+
+    background:#f4f4ff;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.tip:hover{
+
+    background:#6C63FF;
+
+    color:white;
+
+    transform:translateX(5px);
+
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.container{
+
+    grid-template-columns:1fr;
+
+}
+
+header{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px;
+
+}
+
+header nav{
+
+    margin-top:15px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.upload-card{
+
+    padding:20px;
+
+}
+
+.image-preview{
+
+    height:220px;
+
+}
+
+.logo{
+
+    font-size:22px;
+
+}
+
+header nav{
+
+    gap:15px;
+
+}
+
+}

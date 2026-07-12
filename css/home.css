@@ -128,20 +128,23 @@ padding:100px 5% 30px;
 
 
 
-
-.sidebar,
-.rightbar{
+.sidebar{
 
 background:white;
 
-padding:25px;
+padding:25px 20px;
 
 border-radius:20px;
 
 height:fit-content;
 
-}
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 
+position:sticky;
+
+top:100px;
+
+}
 
 
 .profile-mini{
@@ -166,24 +169,111 @@ object-fit:cover;
 
 
 
+/* ==========================
+      SIDEBAR MENU DESIGN
+========================== */
 
-.sidebar li{
 
-list-style:none;
+.sidebar ul{
 
-padding:15px;
+    list-style:none;
 
-cursor:pointer;
+    margin-top:25px;
 
 }
 
 
 
-.sidebar li:hover{
+.sidebar li{
 
-background:#eef2ff;
+    margin-bottom:12px;
 
-border-radius:10px;
+}
+
+
+
+.sidebar li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#555;
+
+    padding:14px 18px;
+
+    border-radius:15px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+
+
+.sidebar li a i{
+
+    width:25px;
+
+    height:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#6C63FF;
+
+    font-size:18px;
+
+}
+
+
+
+
+.sidebar li a:hover{
+
+    background:linear-gradient(135deg,#6C63FF,#8A2BE2);
+
+    color:white;
+
+    transform:translateX(5px);
+
+}
+
+
+
+.sidebar li a:hover i{
+
+    color:white;
+
+}
+
+
+
+/* Active Menu */
+
+.sidebar li:first-child a{
+
+    background:#eef2ff;
+
+    color:#6C63FF;
+
+}
+
+
+
+.sidebar li:first-child a i{
+
+    color:#6C63FF;
 
 }
 
@@ -366,6 +456,7 @@ grid-template-columns:1fr;
 display:none;
 
 }
+
 
 
 }

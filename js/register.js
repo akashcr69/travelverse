@@ -1,7 +1,4 @@
-/* ===========================================
-   TravelVerse - Register Page
-   File: register.js
-=========================================== */
+
 
 document.addEventListener("DOMContentLoaded", function () {
 

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TravelVerse | Places</title>
+
+<link rel="stylesheet" href="/css/places.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<div class="logo">
+🌍 TravelVerse
+</div>
+
+<nav>
+
+<a href="/html/home.html">Home</a>
+
+<a href="/html/upload.html">Upload Review</a>
+
+<a href="/html/places.html" class="active">Places</a>
+
+<a href="profile.html">Profile</a>
+
+<a href="notification.html">Notifications</a>
+
+<a href="login.html">Logout</a>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<h1>Explore Bangladesh</h1>
+
+<p>
+
+Find hotels, tourist spots and reviews from travelers.
+
+</p>
+
+</section>
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-box">
+
+<input
+type="text"
+id="searchPlace"
+placeholder="Search Tourist Place...">
+
+<select id="category">
+
+<option value="all">All</option>
+
+<option value="Beach">Beach</option>
+
+<option value="Hill">Hill</option>
+
+<option value="Forest">Forest</option>
+
+<option value="Island">Island</option>
+
+<option value="Lake">Lake</option>
+
+</select>
+
+<button onclick="searchPlace()">
+
+<i class="fa-solid fa-search"></i>
+
+Search
+
+</button>
+
+</section>
+
+<!-- ================= PLACES ================= -->
+
+<section class="places" id="placesContainer">
+
+<div class="card" data-category="Beach">
+
+<img src="/assets/longest-sea-beach-in.jpg">
+
+<div class="content">
+
+<h2>Cox's Bazar</h2>
+
+<p>World's Longest Sea Beach</p>
+
+<span>⭐ 4.9</span>
+
+<a href="hotel-details.html">
+
+<button>
+
+View Hotels
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card" data-category="Hill">
+
+<img src="/assets/images.jpeg">
+
+<div class="content">
+
+<h2>Sajek Valley</h2>
+
+<p>Cloud Kingdom of Bangladesh</p>
+
+<span>⭐ 4.8</span>
+
+<a href="hotel-details.html">
+
+<button>
+
+View Hotels
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card" data-category="Forest">
+
+<img src="/assets/922_giant.jpg">
+
+<div class="content">
+
+<h2>Sundarbans</h2>
+
+<p>Largest Mangrove Forest</p>
+
+<span>⭐ 4.9</span>
+
+<a href="hotel-details.html">
+
+<button>
+
+View Hotels
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card" data-category="Island">
+
+<img src="/assets/image-299881-1754634544.jpg">
+
+<div class="content">
+
+<h2>Saint Martin</h2>
+
+<p>Beautiful Coral Island</p>
+
+<span>⭐ 5.0</span>
+
+<a href="hotel-details.html">
+
+<button>
+
+View Hotels
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card" data-category="Hill">
+
+<img src="/assets/a93a9706d01a595cf222de17a931d03e.jpg">
+
+<div class="content">
+
+<h2>Bandarban</h2>
+
+<p>Adventure Destination</p>
+
+<span>⭐ 4.8</span>
+
+<a href="hotel-details.html">
+
+<button>
+
+View Hotels
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card" data-category="Lake">
+
+<img src="/assets/1525327366_1.jpg">
+
+<div class="content">
+
+<h2>Rangamati</h2>
+
+<p>Kaptai Lake</p>
+
+<span>⭐ 4.7</span>
+
+<a href="hotel-details.html">
+
+<button>
+
+View Hotels
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 TravelVerse | Explore • Review • Inspire
+
+</p>
+
+</footer>
+
+<script src="/js/places.js"></script>
+
+</body>
+</html>

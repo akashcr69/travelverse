@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TravelVerse | Upload Post</title>
+
+    <link rel="stylesheet" href="/css/upload.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <i class="fa-solid fa-earth-americas"></i>
+
+        TravelVerse
+
+    </div>
+
+    <nav>
+
+        <a href="home.html">Home</a>
+
+        <a href="places.html">Places</a>
+
+        <a href="profile.html">Profile</a>
+
+        <a href="notification.html">Notifications</a>
+
+        <a href="login.html">Logout</a>
+
+    </nav>
+
+</header>
+
+<div class="container">
+
+<div class="upload-card">
+
+<h1>Create New Post</h1>
+
+<form id="uploadForm">
+
+<div class="image-preview">
+
+<img
+id="previewImage"
+src="assets/images/upload-placeholder.png"
+alt="Preview">
+
+</div>
+
+<div class="image-actions">
+
+    <button type="button" id="changeImageBtn">
+        Change Image
+    </button>
+
+    <button type="button" id="deleteImageBtn">
+        Delete Image
+    </button>
+
+</div>
+
+<label>
+
+Upload Image
+
+</label>
+
+<input
+type="file"
+id="image"
+accept="image/*">
+
+<label>
+
+Tourist Place
+
+</label>
+
+<select id="place">
+
+<option>Cox's Bazar</option>
+
+<option>Sajek Valley</option>
+
+<option>Saint Martin</option>
+
+<option>Sundarbans</option>
+
+<option>Bandarban</option>
+
+<option>Sylhet</option>
+
+</select>
+
+<label>
+
+Location
+
+</label>
+
+<input
+type="text"
+id="location"
+placeholder="Enter Location">
+
+<label>
+
+Caption
+
+</label>
+
+<textarea
+
+id="caption"
+
+rows="5"
+
+placeholder="Share your travel experience...">
+
+</textarea>
+
+<button type="submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Publish Post
+
+</button>
+
+</form>
+
+</div>
+
+<div class="tips">
+
+<h2>Travel Tips</h2>
+
+<div class="tip">
+
+📷 Upload High Quality Images
+
+</div>
+
+<div class="tip">
+
+📍 Add Correct Location
+
+</div>
+
+<div class="tip">
+
+⭐ Share Honest Experience
+
+</div>
+
+<div class="tip">
+
+🌍 Inspire Other Travelers
+
+</div>
+
+</div>
+
+</div>
+
+<script src="/js/upload.js"></script>
+
+</body>
+
+</html>

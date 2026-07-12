@@ -1,0 +1,523 @@
+<!-- ==========================================================
+Module 6 : hotel-details.html
+TravelVerse - Hotel Details Page
+========================================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TravelVerse | Hotel Details</title>
+
+<link rel="stylesheet" href="/css/hotel-details.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<div class="logo">
+
+🌍 TravelVerse
+
+</div>
+
+<nav>
+
+<a href="/html/home.html">Home</a>
+
+<a href="/html/places.html">Places</a>
+
+<a href="/html/upload.html">Upload Review</a>
+
+<a href="/html/">Profile</a>
+
+<a href="notification.html">Notifications</a>
+
+<a href="/html/login.html">Logout</a>
+
+</nav>
+
+</header>
+
+
+
+<!-- ================= COVER ================= -->
+
+<section class="cover">
+
+<img
+id="hotelCover"
+src="assets/images/hotel-cover.jpg"
+alt="Hotel">
+
+<div class="cover-overlay">
+
+<h1 id="hotelName">
+
+Hotel Sea Crown
+
+</h1>
+
+<p id="touristSpot">
+
+📍 Cox's Bazar, Bangladesh
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+
+<!-- LEFT -->
+
+<div class="left-section">
+
+
+
+<div class="hotel-card">
+
+<h2>
+
+Hotel Information
+
+</h2>
+
+<div class="info">
+
+<p>
+
+🏨 Hotel Name
+
+<span id="infoHotel">
+
+Hotel Sea Crown
+
+</span>
+
+</p>
+
+<p>
+
+📍 District
+
+<span id="infoDistrict">
+
+Cox's Bazar
+
+</span>
+
+</p>
+
+<p>
+
+📞 Phone
+
+<span>
+
++8801700000000
+
+</span>
+
+</p>
+
+<p>
+
+🌐 Website
+
+<a href="#">
+
+www.seacrown.com
+
+</a>
+
+</p>
+
+<p>
+
+💰 Cost
+
+<span>
+
+4500 BDT / Night
+
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+<div class="hotel-card">
+
+<h2>
+
+Facilities
+
+</h2>
+
+<div class="facilities">
+
+<div>✅ Free WiFi</div>
+
+<div>✅ Parking</div>
+
+<div>✅ Swimming Pool</div>
+
+<div>✅ Restaurant</div>
+
+<div>✅ Sea View</div>
+
+<div>✅ Breakfast</div>
+
+<div>✅ Air Condition</div>
+
+<div>✅ Family Room</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="hotel-card">
+
+<h2>
+
+Description
+
+</h2>
+
+<p>
+
+Enjoy a luxurious stay with sea view rooms,
+excellent service and modern facilities.
+
+Travelers can upload their own review and
+hotel photos from the Upload Review page.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- RIGHT -->
+
+<div class="right-section">
+
+
+
+<div class="rating-box">
+
+<h2>
+
+Community Rating
+
+</h2>
+
+<h1 id="averageRating">
+
+4.8 ⭐
+
+</h1>
+
+<p>
+
+Based on
+
+<span id="reviewCount">
+
+0
+
+</span>
+
+Reviews
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="gallery">
+
+<h2>
+
+Gallery
+
+</h2>
+
+<div class="gallery-grid">
+
+<img src="assets/images/hotel1.jpg">
+
+<img src="assets/images/hotel2.jpg">
+
+<img src="assets/images/hotel3.jpg">
+
+<img src="assets/images/hotel4.jpg">
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="reviews-section">
+
+<h2>
+
+Traveler Reviews
+
+</h2>
+
+<div id="reviewContainer">
+
+
+
+<!-- Review Card -->
+
+<div class="review-card">
+
+<div class="review-header">
+
+<img src="assets/images/user1.jpg">
+
+<div>
+
+<h3>
+
+Akash
+
+</h3>
+
+<p>
+
+⭐⭐⭐⭐⭐
+
+</p>
+
+</div>
+
+</div>
+
+<p>
+
+Excellent hotel.
+
+Very clean rooms with an amazing sea view.
+
+Highly recommended.
+
+</p>
+
+<div class="review-footer">
+
+<button class="edit-btn">
+
+Edit
+
+</button>
+
+<button class="delete-btn">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="review-card">
+
+<div class="review-header">
+
+<img src="assets/images/user2.jpg">
+
+<div>
+
+<h3>
+
+Rahim
+
+</h3>
+
+<p>
+
+⭐⭐⭐⭐☆
+
+</p>
+
+</div>
+
+</div>
+
+<p>
+
+Food quality was very good.
+
+Staff were friendly.
+
+</p>
+
+<div class="review-footer">
+
+<button class="edit-btn">
+
+Edit
+
+</button>
+
+<button class="delete-btn">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ADD REVIEW ================= -->
+
+<section class="quick-review">
+
+<h2>
+
+Add Another Review
+
+</h2>
+
+<textarea
+
+id="newReview"
+
+placeholder="Write your experience...">
+
+</textarea>
+
+<select id="newRating">
+
+<option value="5">
+
+⭐⭐⭐⭐⭐
+
+</option>
+
+<option value="4">
+
+⭐⭐⭐⭐
+
+</option>
+
+<option value="3">
+
+⭐⭐⭐
+
+</option>
+
+<option value="2">
+
+⭐⭐
+
+</option>
+
+<option value="1">
+
+⭐
+
+</option>
+
+</select>
+
+<button id="submitReview">
+
+Submit Review
+
+</button>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 TravelVerse
+
+Explore • Review • Inspire
+
+</p>
+
+</footer>
+
+
+
+<script src="/js/hotel-details.js"></script>
+
+</body>
+
+</html>
