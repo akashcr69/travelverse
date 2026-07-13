@@ -9,6 +9,7 @@
     <title>TravelVerse | Upload Post</title>
 
     <link rel="stylesheet" href="/css/upload.css">
+    <link rel="stylesheet" href="/css/theme.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -17,16 +18,13 @@
 
 </head>
 
-<body>
+<body data-auth-required="true" data-auth-message="Please login to create a post.">
 
 <header>
 
     <div class="logo">
-
         <i class="fa-solid fa-earth-americas"></i>
-
         TravelVerse
-
     </div>
 
     <nav>
@@ -37,147 +35,286 @@
 
         <a href="profile.html">Profile</a>
 
-        <a href="notification.html">Notifications</a>
+        <a href="saved.html">Saved</a>
 
-        <a href="login.html">Logout</a>
+        <a href="notifications.html">Notifications</a>
+
+        <a href="settings.html">Settings</a>
+
+        <a href="login.html" onclick="logoutUser(event)">Logout</a>
 
     </nav>
 
 </header>
 
-<div class="container">
 
-<div class="upload-card">
+<!-- ================= CREATOR HERO ================= -->
 
-<h1>Create New Post</h1>
+<section class="upload-hero">
 
-<form id="uploadForm">
+    <div>
 
-<div class="image-preview">
+        <span class="creator-badge">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            Creator Studio
+        </span>
 
-<img
-id="previewImage"
-src="assets/images/upload-placeholder.png"
-alt="Preview">
+        <h1>Create New Travel Story</h1>
 
-</div>
+        <p>
+            Share your best travel moments, upload beautiful photos and inspire other travelers.
+        </p>
 
-<div class="image-actions">
+    </div>
 
-    <button type="button" id="changeImageBtn">
-        Change Image
-    </button>
+</section>
 
-    <button type="button" id="deleteImageBtn">
-        Delete Image
-    </button>
 
-</div>
+<!-- ================= MAIN LAYOUT ================= -->
 
-<label>
+<main class="creator-wrapper">
 
-Upload Image
+    <!-- LEFT SIDE FORM -->
 
-</label>
+    <section class="upload-card">
 
-<input
-type="file"
-id="image"
-accept="image/*">
+        <div class="card-header">
 
-<label>
+            <div>
+                <h2>Create New Post</h2>
+                <p>Upload your travel photo and write your experience.</p>
+            </div>
 
-Tourist Place
+            <i class="fa-solid fa-paper-plane"></i>
 
-</label>
+        </div>
 
-<select id="place">
+        <form id="uploadForm">
 
-<option>Cox's Bazar</option>
+            <div class="image-preview">
 
-<option>Sajek Valley</option>
+                <img
+                id="previewImage"
+                src="assets/images/upload-placeholder.png"
+                alt="Preview">
 
-<option>Saint Martin</option>
+            </div>
 
-<option>Sundarbans</option>
+            <div class="image-actions">
 
-<option>Bandarban</option>
+                <button type="button" id="changeImageBtn">
+                    <i class="fa-solid fa-image"></i>
+                    Change Image
+                </button>
 
-<option>Sylhet</option>
+                <button type="button" id="deleteImageBtn">
+                    <i class="fa-solid fa-trash"></i>
+                    Delete Image
+                </button>
 
-</select>
+            </div>
 
-<label>
+            <div class="form-group">
 
-Location
+                <label>
+                    Upload Image
+                </label>
 
-</label>
+                <input
+                type="file"
+                id="image"
+                accept="image/*">
 
-<input
-type="text"
-id="location"
-placeholder="Enter Location">
+            </div>
 
-<label>
+            <div class="form-grid">
 
-Caption
+                <div class="form-group">
 
-</label>
+                    <label>
+                        Tourist Place
+                    </label>
 
-<textarea
+                    <select id="place">
 
-id="caption"
+                        <option>Cox's Bazar</option>
 
-rows="5"
+                        <option>Sajek Valley</option>
 
-placeholder="Share your travel experience...">
+                        <option>Saint Martin</option>
 
-</textarea>
+                        <option>Sundarbans</option>
 
-<button type="submit">
+                        <option>Bandarban</option>
 
-<i class="fa-solid fa-paper-plane"></i>
+                        <option>Sylhet</option>
 
-Publish Post
+                    </select>
 
-</button>
+                </div>
 
-</form>
+                <div class="form-group">
 
-</div>
+                    <label>
+                        Location
+                    </label>
 
-<div class="tips">
+                    <input
+                    type="text"
+                    id="location"
+                    placeholder="Enter Location">
 
-<h2>Travel Tips</h2>
+                </div>
 
-<div class="tip">
+            </div>
 
-📷 Upload High Quality Images
+            <div class="form-group">
 
-</div>
+                <div class="label-row">
+                    <label>Caption</label>
+                    <span id="captionCounter">0/250</span>
+                </div>
 
-<div class="tip">
+                <textarea
+                id="caption"
+                rows="5"
+                maxlength="250"
+                placeholder="Share your travel experience..."></textarea>
 
-📍 Add Correct Location
+            </div>
 
-</div>
+            <button type="submit" class="publish-btn">
 
-<div class="tip">
+                <i class="fa-solid fa-paper-plane"></i>
 
-⭐ Share Honest Experience
+                Publish Post
 
-</div>
+            </button>
 
-<div class="tip">
+        </form>
 
-🌍 Inspire Other Travelers
+    </section>
 
-</div>
 
-</div>
+    <!-- RIGHT SIDE PREVIEW / TIPS / STATS -->
 
-</div>
+    <aside class="creator-side">
 
+        <!-- LIVE PREVIEW -->
+
+        <section class="preview-card">
+
+            <div class="side-title">
+
+                <div>
+                    <h2>Live Post Preview</h2>
+                    <p>See how your post will appear before publishing.</p>
+                </div>
+
+                <i class="fa-solid fa-eye"></i>
+
+            </div>
+
+            <div class="live-post">
+
+                <div class="live-user">
+
+                    <img
+                    id="livePreviewUserImage"
+                    src="assets/WhatsApp Image 2026-07-13 at 03.10.00.jpeg"
+                    alt="User">
+
+                    <div>
+                        <h4 id="livePreviewUserName">Traveler</h4>
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span id="livePreviewLocation">Travel Location</span>
+                        </p>
+                    </div>
+
+                </div>
+
+                <img
+                id="livePreviewImage"
+                src="assets/images/upload-placeholder.png"
+                alt="Live Preview"
+                class="live-preview-image">
+
+                <h3 id="livePreviewPlace">Cox's Bazar</h3>
+
+                <p id="livePreviewCaption">
+                    Your travel story preview will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK STATS -->
+
+        <section class="quick-stats">
+
+            <div class="stat-box">
+
+                <i class="fa-solid fa-newspaper"></i>
+
+                <div>
+                    <h3 id="totalPostsCount">0</h3>
+                    <p>Total Posts</p>
+                </div>
+
+            </div>
+
+            <div class="stat-box">
+
+                <i class="fa-solid fa-images"></i>
+
+                <div>
+                    <h3 id="uploadedPhotosCount">0</h3>
+                    <p>Uploaded Photos</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRAVEL TIPS -->
+
+        <section class="tips">
+
+            <h2>Travel Tips</h2>
+
+            <div class="tip">
+                <i class="fa-solid fa-camera"></i>
+                <span>Upload High Quality Images</span>
+            </div>
+
+            <div class="tip">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Add Correct Location</span>
+            </div>
+
+            <div class="tip">
+                <i class="fa-solid fa-star"></i>
+                <span>Share Honest Experience</span>
+            </div>
+
+            <div class="tip">
+                <i class="fa-solid fa-globe"></i>
+                <span>Inspire Other Travelers</span>
+            </div>
+
+        </section>
+
+    </aside>
+
+</main>
+
+
+<script src="/js/theme.js"></script>
+<script src="/js/auth.js"></script>
 <script src="/js/upload.js"></script>
 
 </body>

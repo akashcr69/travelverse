@@ -8,348 +8,204 @@
 
 <title>TravelVerse | Home</title>
 
-
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/theme.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
 </head>
 
-
 <body>
-
 
 <!-- Navbar -->
 
 <header class="navbar">
 
+    <div class="logo">
+        <i class="fa-solid fa-earth-americas"></i>
+        TravelVerse
+    </div>
 
-<div class="logo">
+    <div class="search">
+        <i class="fa-solid fa-search"></i>
+        <input type="text" placeholder="Search places...">
+    </div>
 
-<i class="fa-solid fa-earth-americas"></i>
+    <div class="nav-icons">
 
-TravelVerse
+        <a href="notifications.html" class="notification-link" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span id="notificationBadge" class="notification-badge">0</span>
+        </a>
 
-</div>
+        <a href="profile.html" title="Profile">
+            <i class="fa-solid fa-user"></i>
+        </a>
 
+        <a href="settings.html" title="Settings">
+            <i class="fa-solid fa-gear"></i>
+        </a>
 
+        <button onclick="logout()">
+            Logout
+        </button>
 
-<div class="search">
-
-<i class="fa-solid fa-search"></i>
-
-<input type="text" placeholder="Search places...">
-
-</div>
-
-
-
-<div class="nav-icons">
-
-
-<i class="fa-solid fa-bell"></i>
-
-
-<i class="fa-solid fa-user"></i>
-
-
-<button onclick="logout()">
-
-Logout
-
-</button>
-
-
-</div>
-
-
+    </div>
 
 </header>
 
 
-
-
-
 <div class="main">
 
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="profile-mini">
+
+            <img 
+            id="sidebarProfileImage"
+            src="assets/WhatsApp Image 2026-07-13 at 03.10.00.jpeg"
+            alt="Profile">
+
+            <h3 id="sidebarProfileName">Partho Singh</h3>
+
+            <p id="sidebarProfileUsername">@partho_singh</p>
+
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="upload.html">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Create Post</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="places.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Explore Places</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="saved.html">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <span>Saved</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
 
 
-<!-- Sidebar -->
+    <!-- Feed -->
+
+    <section class="feed">
+
+        <div class="create-post">
+
+            <input 
+            type="text"
+            id="postText"
+            placeholder="Share your travel story...">
+
+            <button onclick="createPost()">
+                Post
+            </button>
+
+        </div>
+
+        <!-- Dynamic posts will load here from home.js -->
+        <div id="postContainer"></div>
+
+    </section>
 
 
-<aside class="sidebar">
+    <!-- Right Sidebar -->
+
+    <aside class="rightbar">
+
+        <h2>Trending Places</h2>
+
+        <div class="trend-card">
+            <img src="/assets/images.jpeg" alt="Sajek Valley">
+            <h4>Sajek Valley</h4>
+        </div>
+
+        <div class="trend-card">
+            <img src="/assets/922_giant.jpg" alt="Sundarbans">
+            <h4>Sundarbans</h4>
+        </div>
+
+        <div class="trend-card">
+            <img src="/assets/image-299881-1754634544.jpg" alt="Saint Martin">
+            <h4>Saint Martin</h4>
+        </div>
 
 
-<div class="profile-mini">
+        <!-- Home Saved Collection Widget -->
 
+        <div class="home-saved-widget">
 
-<img src="/assets/WhatsApp Image 2026-07-13 at 03.10.00.jpeg">
+            <div class="saved-widget-head">
+                <h2>Saved Collection</h2>
+                <a href="saved.html">View All</a>
+            </div>
 
+            <div class="saved-widget-counts">
 
-<h3>Partho Singh</h3>
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="homeSavedPlacesCount">0</span>
+                    <p>Places</p>
+                </div>
 
+                <div>
+                    <i class="fa-solid fa-hotel"></i>
+                    <span id="homeSavedHotelsCount">0</span>
+                    <p>Hotels</p>
+                </div>
 
-<p>@partho_singh</p>
+            </div>
 
+            <div id="homeSavedList" class="home-saved-list"></div>
+
+        </div>
+
+    </aside>
 
 </div>
 
-
-<ul>
-
-
-<li>
-<a href="home.html">
-
-<i class="fa-solid fa-house"></i>
-
-<span>Home</span>
-
-</a>
-</li>
-
-
-
-<li>
-<a href="upload.html">
-
-<i class="fa-solid fa-camera"></i>
-
-<span>Create Post</span>
-
-</a>
-</li>
-
-
-
-<li>
-<a href="places.html">
-
-<i class="fa-solid fa-location-dot"></i>
-
-<span>Explore Places</span>
-
-</a>
-</li>
-
-
-
-<li>
-<a href="profile.html">
-
-<i class="fa-solid fa-user"></i>
-
-<span>Profile</span>
-
-</a>
-</li>
-
-
-
-
-
-
-</ul>
-
-</aside>
-
-
-
-
-
-
-
-<!-- Feed -->
-
-
-<section class="feed">
-
-
-
-<div class="create-post">
-
-
-
-
-
-<input 
-type="text"
-id="postText"
-placeholder="Share your travel story...">
-
-
-
-<button onclick="createPost()">
-
-Post
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<div id="postContainer">
-
-
-
-
-
-<div class="post-card">
-
-
-<div class="post-user">
-
-
-<img src="/assets/WhatsApp Image 2026-07-13 at 03.17.58.jpeg">
-
-
-<div>
-
-<h4>Akash</h4>
-
-<span>
-📍 Cox's Bazar
-</span>
-
-
-</div>
-
-
-</div>
-
-
-
-<img class="post-image"
-src="/assets/f558dcac-c4ee-474a-9354-9ff3921c662c.jpeg">
-
-
-
-<p>
-
-Beautiful sunset at Cox's Bazar 🌅
-
-</p>
-
-
-
-<div class="actions">
-
-
-<button onclick="likePost(this)">
-
-❤️ Like
-
-</button>
-
-
-
-<button>
-
-💬 Comment
-
-</button>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<!-- Right Sidebar -->
-
-
-<aside class="rightbar">
-
-
-<h2>
-Trending Places
-</h2>
-
-
-
-<div class="trend-card">
-
-<img src="/assets/images.jpeg">
-
-<h4>
-Sajek Valley
-</h4>
-
-
-</div>
-
-
-
-<div class="trend-card">
-
-<img src="/assets/922_giant.jpg">
-
-
-<h4>
-Sundarbans
-</h4>
-
-</div>
-
-
-
-
-<div class="trend-card">
-
-
-<img src="/assets/image-299881-1754634544.jpg">
-
-
-<h4>
-Saint Martin
-</h4>
-
-
-</div>
-
-
-
-</aside>
-
-
-
-
-</div>
-
-
+<script src="/js/theme.js"></script>
 <script src="/js/home.js"></script>
-
 
 </body>
 

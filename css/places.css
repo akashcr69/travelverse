@@ -171,23 +171,81 @@ nav .active{
     display:inline-block;
     color:#ff9800;
     font-weight:600;
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
-.content button{
-    width:100%;
-    padding:13px;
-    border:none;
-    border-radius:10px;
-    background:linear-gradient(135deg,#6C63FF,#8A2BE2);
-    color:#fff;
-    cursor:pointer;
-    font-size:15px;
-    transition:.3s;
+/* ================= PREMIUM CARD BUTTONS ================= */
+
+.card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 5px;
 }
 
-.content button:hover{
-    transform:scale(1.03);
+.card-actions a {
+    display: block;
+    text-decoration: none;
+}
+
+.card-actions a button,
+.save-place-btn {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+/* View Hotels Button */
+
+.card-actions a button {
+    background: linear-gradient(135deg,#6C63FF,#8A2BE2);
+    color: #ffffff;
+    box-shadow: 0 10px 22px rgba(108,99,255,0.28);
+}
+
+.card-actions a button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(108,99,255,0.38);
+}
+
+/* Save Button */
+
+.save-place-btn {
+    background: #ffffff;
+    color: #6C63FF;
+    border: 1.5px solid #dcd9ff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.save-place-btn:hover {
+    background: #eef2ff;
+    transform: translateY(-3px);
+}
+
+/* Saved State - Click Again to Remove */
+
+.save-place-btn.saved {
+    background: linear-gradient(135deg,#16a34a,#22c55e);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(34,197,94,0.28);
+}
+
+.save-place-btn.saved:hover {
+    background: linear-gradient(135deg,#ef4444,#dc2626);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(239,68,68,0.30);
 }
 
 /* ================= FOOTER ================= */
@@ -203,46 +261,50 @@ footer{
 
 @media(max-width:900px){
 
-header{
-    flex-direction:column;
-    height:auto;
-    padding:20px;
-}
+    header{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+    }
 
-nav{
-    margin-top:15px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
+    nav{
+        margin-top:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
 
-.hero h1{
-    font-size:36px;
-}
+    .hero h1{
+        font-size:36px;
+    }
 
 }
 
 @media(max-width:600px){
 
-.hero{
-    height:230px;
-}
+    .hero{
+        height:230px;
+    }
 
-.hero h1{
-    font-size:28px;
-}
+    .hero h1{
+        font-size:28px;
+    }
 
-.hero p{
-    font-size:15px;
-}
+    .hero p{
+        font-size:15px;
+    }
 
-.search-box{
-    flex-direction:column;
-}
+    .search-box{
+        flex-direction:column;
+    }
 
-.search-box input,
-.search-box select,
-.search-box button{
-    width:100%;
-}
+    .search-box input,
+    .search-box select,
+    .search-box button{
+        width:100%;
+    }
+
+    .card-actions {
+        grid-template-columns: 1fr;
+    }
 
 }

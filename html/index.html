@@ -13,6 +13,9 @@
     <!-- Landing Page CSS -->
     <link rel="stylesheet" href="/css/landing.css">
 
+    <!-- Global Theme CSS -->
+    <link rel="stylesheet" href="/css/theme.css">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -51,7 +54,6 @@
         <a href="login.html" class="btn login-btn">
             Login
         </a>
-
 
         <a href="register.html" class="btn register-btn">
             Register
@@ -123,30 +125,123 @@
 
 
 
-<!-- ================= SEARCH SECTION ================= -->
+<!-- ================= SMART EXPLORE PANEL ================= -->
+
+<section class="smart-explore-section">
+
+    <div class="smart-explore-card">
+
+        <div class="smart-explore-left">
+
+            <span class="smart-badge">
+                <i class="fa-solid fa-compass"></i>
+                Smart Explore
+            </span>
+
+            <h2>
+                Where do you want to go next?
+            </h2>
+
+            <p>
+                Choose a travel type and start exploring beautiful destinations, hotels and traveler reviews.
+            </p>
+
+            <div class="explore-categories">
+
+                <a href="places.html" class="category-chip">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                    Beach
+                </a>
+
+                <a href="places.html" class="category-chip">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    Hill
+                </a>
+
+                <a href="places.html" class="category-chip">
+                    <i class="fa-solid fa-tree"></i>
+                    Forest
+                </a>
+
+                <a href="places.html" class="category-chip">
+                    <i class="fa-solid fa-water"></i>
+                    Island
+                </a>
+
+                <a href="places.html" class="category-chip">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Lake
+                </a>
+
+            </div>
+
+            <div class="popular-destinations">
+
+                <span>Popular Now:</span>
+
+                <a href="places.html">Cox's Bazar</a>
+
+                <a href="places.html">Sajek Valley</a>
+
+                <a href="places.html">Sundarbans</a>
+
+                <a href="places.html">Saint Martin</a>
+
+            </div>
+
+        </div>
 
 
-<section class="search-section">
+        <div class="smart-explore-right">
 
+            <div class="mini-action-card">
 
-    <div class="search-box">
+                <i class="fa-solid fa-location-dot"></i>
 
+                <div>
+                    <h3>Explore Tourist Spots</h3>
+                    <p>Find top destinations with ratings.</p>
+                </div>
 
-        <i class="fa-solid fa-search"></i>
+            </div>
 
+            <div class="mini-action-card">
 
-        <input 
-        type="text"
-        placeholder="Search tourist places...">
+                <i class="fa-solid fa-hotel"></i>
 
+                <div>
+                    <h3>Find Hotels</h3>
+                    <p>Check hotels near your destination.</p>
+                </div>
 
-        <button>
-            Search
-        </button>
+            </div>
 
+            <div class="mini-action-card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <div>
+                    <h3>Read Reviews</h3>
+                    <p>See real traveler experiences.</p>
+                </div>
+
+            </div>
+
+            <div class="smart-buttons">
+
+                <a href="places.html" class="smart-primary-btn">
+                    Explore Tourist Spots
+                </a>
+
+                <a href="hotel-details.html" class="smart-secondary-btn">
+                    Find Hotels
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
-
 
 </section>
 
@@ -453,8 +548,8 @@ Explore. Share. Connect.
 
 <!-- Javascript -->
 
+<script src="/js/theme.js"></script>
 <script src="/js/app.js"></script>
-
 <script src="/js/landing.js"></script>
 
 

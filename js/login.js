@@ -1,26 +1,35 @@
 document
-.getElementById("loginForm")
-.addEventListener("submit",function(e){
+  .getElementById("loginForm")
+  .addEventListener("submit", function (e) {
 
-e.preventDefault();
+    e.preventDefault();
 
-let email=document.getElementById("email").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-let password=document.getElementById("password").value;
+    if (email == "admin@gmail.com" && password == "1234") {
 
-if(email=="admin@gmail.com" && password=="1234"){
+      // Old login storage
+      localStorage.setItem("travelUser", email);
 
-localStorage.setItem("travelUser",email);
+      // New current user storage for own post delete system
+      const currentUser = {
+        id: 1,
+        name: "Admin User",
+        email: email,
+        image: "assets/images/user.png"
+      };
 
-alert("Login Successful");
+      localStorage.setItem("travelverse_current_user", JSON.stringify(currentUser));
 
-window.location.href="home.html";
+      alert("Login Successful");
 
-}
-else{
+      window.location.href = "home.html";
 
-alert("Invalid Email or Password");
+    } else {
 
-}
+      alert("Invalid Email or Password");
 
-});
+    }
+
+  });

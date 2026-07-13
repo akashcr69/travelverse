@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+/* Navbar */
+
+.navbar {
+    height: 75px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #6C63FF;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #6C63FF;
+}
+
+.logout-btn {
+    border: none;
+    background: #6C63FF;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* Wrapper */
+
+.notifications-wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin: 105px auto 45px;
+}
+
+/* Header */
+
+.notifications-header {
+    background: linear-gradient(135deg, #6C63FF, #8A2BE2);
+    color: #ffffff;
+    padding: 35px;
+    border-radius: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 18px 40px rgba(108,99,255,0.28);
+}
+
+.notifications-header h1 {
+    font-size: 36px;
+}
+
+.notifications-header p {
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+.notifications-header button {
+    border: none;
+    background: rgba(255,255,255,0.18);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Stats */
+
+.notification-stats {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+}
+
+.stat-card h3 {
+    font-size: 30px;
+    color: #6C63FF;
+}
+
+.stat-card p {
+    margin-top: 6px;
+    color: #64748b;
+}
+
+/* Notification Card */
+
+.notification-card {
+    margin-top: 24px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    color: #0F172A;
+}
+
+.section-title button {
+    border: none;
+    background: #eef2ff;
+    color: #6C63FF;
+    padding: 10px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Notification List */
+
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 18px;
+    transition: 0.3s ease;
+    border-left: 5px solid transparent;
+}
+
+.notification-item.unread {
+    background: #eef2ff;
+    border-left-color: #6C63FF;
+}
+
+.notification-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.notification-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6C63FF, #8A2BE2);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content h4 {
+    color: #0F172A;
+    margin-bottom: 5px;
+}
+
+.notification-content p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.notification-time {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.read-btn {
+    border: none;
+    background: #ffffff;
+    color: #6C63FF;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.empty-message {
+    padding: 30px;
+    border-radius: 18px;
+    background: #f8fafc;
+    text-align: center;
+    color: #64748b;
+}
+
+/* Responsive */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .notifications-header {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .notification-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .notification-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TravelVerse | Saved</title>
+
+<link rel="stylesheet" href="/css/saved.css">
+<link rel="stylesheet" href="/css/theme.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-earth-americas"></i>
+        TravelVerse
+    </div>
+
+    <div class="nav-links">
+
+        <a href="home.html">Home</a>
+
+        <a href="upload.html">Create Post</a>
+
+        <a href="places.html">Places</a>
+
+        <a href="notifications.html">Notifications</a>
+
+        <a href="profile.html">Profile</a>
+
+        <a href="settings.html">Settings</a>
+
+        <a href="saved.html" class="active">Saved</a>
+
+    </div>
+
+    <button onclick="logout()" class="logout-btn">Logout</button>
+
+</header>
+
+
+<main class="saved-wrapper">
+
+    <section class="saved-hero">
+
+        <div>
+            <h1>Saved Collection</h1>
+            <p>Your favorite tourist places and hotels are saved here.</p>
+        </div>
+
+        <div class="hero-icon">
+            <i class="fa-solid fa-bookmark"></i>
+        </div>
+
+    </section>
+
+
+    <section class="saved-tabs">
+
+        <button class="tab-btn active" data-tab="placesTab">
+            <i class="fa-solid fa-location-dot"></i>
+            Saved Places
+            <span id="placeCount">0</span>
+        </button>
+
+        <button class="tab-btn" data-tab="hotelsTab">
+            <i class="fa-solid fa-hotel"></i>
+            Saved Hotels
+            <span id="hotelCount">0</span>
+        </button>
+
+    </section>
+
+
+    <section class="saved-card tab-content active" id="placesTab">
+
+        <div class="section-head">
+            <div>
+                <h2>Saved Places</h2>
+                <p>Places you want to visit later.</p>
+            </div>
+
+            <button id="clearPlacesBtn">
+                <i class="fa-solid fa-trash"></i>
+                Clear Places
+            </button>
+        </div>
+
+        <div id="savedPlacesList" class="saved-grid"></div>
+
+    </section>
+
+
+    <section class="saved-card tab-content" id="hotelsTab">
+
+        <div class="section-head">
+            <div>
+                <h2>Saved Hotels</h2>
+                <p>Hotels you saved for future trips.</p>
+            </div>
+
+            <button id="clearHotelsBtn">
+                <i class="fa-solid fa-trash"></i>
+                Clear Hotels
+            </button>
+        </div>
+
+        <div id="savedHotelsList" class="saved-grid"></div>
+
+    </section>
+
+</main>
+
+
+<script src="/js/theme.js"></script>
+<script src="/js/saved.js"></script>
+
+</body>
+
+</html>

@@ -14,6 +14,7 @@ TravelVerse - Hotel Details Page
 <title>TravelVerse | Hotel Details</title>
 
 <link rel="stylesheet" href="/css/hotel-details.css">
+<link rel="stylesheet" href="/css/theme.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -28,27 +29,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <header>
 
-<div class="logo">
+    <div class="logo">
+        🌍 TravelVerse
+    </div>
 
-🌍 TravelVerse
+    <nav>
 
-</div>
+        <a href="home.html">Home</a>
 
-<nav>
+        <a href="places.html">Places</a>
 
-<a href="/html/home.html">Home</a>
+        <a href="upload.html">Upload Review</a>
 
-<a href="/html/places.html">Places</a>
+        <a href="profile.html">Profile</a>
 
-<a href="/html/upload.html">Upload Review</a>
+        <a href="notifications.html">Notifications</a>
 
-<a href="/html/">Profile</a>
+        <a href="saved.html">Saved</a>
 
-<a href="notification.html">Notifications</a>
+        <a href="settings.html">Settings</a>
 
-<a href="/html/login.html">Logout</a>
+        <a href="login.html">Logout</a>
 
-</nav>
+    </nav>
 
 </header>
 
@@ -58,26 +61,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <section class="cover">
 
-<img
-id="hotelCover"
-src="assets/images/hotel-cover.jpg"
-alt="Hotel">
+    <img
+    id="hotelCover"
+    src="assets/images/hotel-cover.jpg"
+    alt="Hotel">
 
-<div class="cover-overlay">
+    <div class="cover-overlay">
 
-<h1 id="hotelName">
+        <h1 id="hotelName">
+            Hotel Sea Crown
+        </h1>
 
-Hotel Sea Crown
+        <p id="touristSpot">
+            📍 Cox's Bazar, Bangladesh
+        </p>
 
-</h1>
-
-<p id="touristSpot">
-
-📍 Cox's Bazar, Bangladesh
-
-</p>
-
-</div>
+    </div>
 
 </section>
 
@@ -97,75 +96,48 @@ Hotel Sea Crown
 
 <div class="hotel-card">
 
-<h2>
+    <h2>
+        Hotel Information
+    </h2>
 
-Hotel Information
+    <div class="info">
 
-</h2>
+        <p>
+            🏨 Hotel Name
+            <span id="infoHotel">
+                Hotel Sea Crown
+            </span>
+        </p>
 
-<div class="info">
+        <p>
+            📍 District
+            <span id="infoDistrict">
+                Cox's Bazar
+            </span>
+        </p>
 
-<p>
+        <p>
+            📞 Phone
+            <span>
+                +8801700000000
+            </span>
+        </p>
 
-🏨 Hotel Name
+        <p>
+            🌐 Website
+            <a href="#">
+                www.seacrown.com
+            </a>
+        </p>
 
-<span id="infoHotel">
+        <p>
+            💰 Cost
+            <span id="hotelPrice">
+                4500 BDT / Night
+            </span>
+        </p>
 
-Hotel Sea Crown
-
-</span>
-
-</p>
-
-<p>
-
-📍 District
-
-<span id="infoDistrict">
-
-Cox's Bazar
-
-</span>
-
-</p>
-
-<p>
-
-📞 Phone
-
-<span>
-
-+8801700000000
-
-</span>
-
-</p>
-
-<p>
-
-🌐 Website
-
-<a href="#">
-
-www.seacrown.com
-
-</a>
-
-</p>
-
-<p>
-
-💰 Cost
-
-<span>
-
-4500 BDT / Night
-
-</span>
-
-</p>
-
-</div>
+    </div>
 
 </div>
 
@@ -174,31 +146,29 @@ www.seacrown.com
 
 <div class="hotel-card">
 
-<h2>
+    <h2>
+        Facilities
+    </h2>
 
-Facilities
+    <div class="facilities">
 
-</h2>
+        <div>✅ Free WiFi</div>
 
-<div class="facilities">
+        <div>✅ Parking</div>
 
-<div>✅ Free WiFi</div>
+        <div>✅ Swimming Pool</div>
 
-<div>✅ Parking</div>
+        <div>✅ Restaurant</div>
 
-<div>✅ Swimming Pool</div>
+        <div>✅ Sea View</div>
 
-<div>✅ Restaurant</div>
+        <div>✅ Breakfast</div>
 
-<div>✅ Sea View</div>
+        <div>✅ Air Condition</div>
 
-<div>✅ Breakfast</div>
+        <div>✅ Family Room</div>
 
-<div>✅ Air Condition</div>
-
-<div>✅ Family Room</div>
-
-</div>
+    </div>
 
 </div>
 
@@ -208,21 +178,17 @@ Facilities
 
 <div class="hotel-card">
 
-<h2>
+    <h2>
+        Description
+    </h2>
 
-Description
+    <p>
+        Enjoy a luxurious stay with sea view rooms,
+        excellent service and modern facilities.
 
-</h2>
-
-<p>
-
-Enjoy a luxurious stay with sea view rooms,
-excellent service and modern facilities.
-
-Travelers can upload their own review and
-hotel photos from the Upload Review page.
-
-</p>
+        Travelers can upload their own review and
+        hotel photos from the Upload Review page.
+    </p>
 
 </div>
 
@@ -242,31 +208,54 @@ hotel photos from the Upload Review page.
 
 <div class="rating-box">
 
-<h2>
+    <h2>
+        Community Rating
+    </h2>
 
-Community Rating
+    <h1 id="averageRating">
+        4.8 ⭐
+    </h1>
 
-</h2>
+    <p>
+        Based on
 
-<h1 id="averageRating">
+        <span id="reviewCount">
+            0
+        </span>
 
-4.8 ⭐
+        Reviews
+    </p>
 
-</h1>
+</div>
 
-<p>
 
-Based on
 
-<span id="reviewCount">
+<!-- ================= SAVE HOTEL BOX ================= -->
 
-0
+<div class="save-hotel-box">
 
-</span>
+    <h2>
+        Save This Hotel
+    </h2>
 
-Reviews
+    <p>
+        Keep this hotel in your saved collection for later.
+    </p>
 
-</p>
+    <button 
+    class="save-hotel-btn"
+    onclick="saveHotel(this)"
+    data-id="hotel-sea-crown"
+    data-name="Hotel Sea Crown"
+    data-location="Cox's Bazar"
+    data-rating="4.8"
+    data-price="4500 BDT / Night"
+    data-image="assets/images/hotel-cover.jpg">
+
+        <i class="fa-solid fa-bookmark"></i>
+        Save Hotel
+
+    </button>
 
 </div>
 
@@ -276,23 +265,21 @@ Reviews
 
 <div class="gallery">
 
-<h2>
+    <h2>
+        Gallery
+    </h2>
 
-Gallery
+    <div class="gallery-grid">
 
-</h2>
+        <img src="assets/images/hotel1.jpg">
 
-<div class="gallery-grid">
+        <img src="assets/images/hotel2.jpg">
 
-<img src="assets/images/hotel1.jpg">
+        <img src="assets/images/hotel3.jpg">
 
-<img src="assets/images/hotel2.jpg">
+        <img src="assets/images/hotel4.jpg">
 
-<img src="assets/images/hotel3.jpg">
-
-<img src="assets/images/hotel4.jpg">
-
-</div>
+    </div>
 
 </div>
 
@@ -311,9 +298,7 @@ Gallery
 <section class="reviews-section">
 
 <h2>
-
-Traveler Reviews
-
+    Traveler Reviews
 </h2>
 
 <div id="reviewContainer">
@@ -324,53 +309,43 @@ Traveler Reviews
 
 <div class="review-card">
 
-<div class="review-header">
+    <div class="review-header">
 
-<img src="assets/images/user1.jpg">
+        <img src="assets/images/user1.jpg">
 
-<div>
+        <div>
 
-<h3>
+            <h3>
+                Akash
+            </h3>
 
-Akash
+            <p>
+                ⭐⭐⭐⭐⭐
+            </p>
 
-</h3>
+        </div>
 
-<p>
+    </div>
 
-⭐⭐⭐⭐⭐
+    <p>
+        Excellent hotel.
 
-</p>
+        Very clean rooms with an amazing sea view.
 
-</div>
+        Highly recommended.
+    </p>
 
-</div>
+    <div class="review-footer">
 
-<p>
+        <button class="edit-btn">
+            Edit
+        </button>
 
-Excellent hotel.
+        <button class="delete-btn">
+            Delete
+        </button>
 
-Very clean rooms with an amazing sea view.
-
-Highly recommended.
-
-</p>
-
-<div class="review-footer">
-
-<button class="edit-btn">
-
-Edit
-
-</button>
-
-<button class="delete-btn">
-
-Delete
-
-</button>
-
-</div>
+    </div>
 
 </div>
 
@@ -380,51 +355,41 @@ Delete
 
 <div class="review-card">
 
-<div class="review-header">
+    <div class="review-header">
 
-<img src="assets/images/user2.jpg">
+        <img src="assets/images/user2.jpg">
 
-<div>
+        <div>
 
-<h3>
+            <h3>
+                Rahim
+            </h3>
 
-Rahim
+            <p>
+                ⭐⭐⭐⭐☆
+            </p>
 
-</h3>
+        </div>
 
-<p>
+    </div>
 
-⭐⭐⭐⭐☆
+    <p>
+        Food quality was very good.
 
-</p>
+        Staff were friendly.
+    </p>
 
-</div>
+    <div class="review-footer">
 
-</div>
+        <button class="edit-btn">
+            Edit
+        </button>
 
-<p>
+        <button class="delete-btn">
+            Delete
+        </button>
 
-Food quality was very good.
-
-Staff were friendly.
-
-</p>
-
-<div class="review-footer">
-
-<button class="edit-btn">
-
-Edit
-
-</button>
-
-<button class="delete-btn">
-
-Delete
-
-</button>
-
-</div>
+    </div>
 
 </div>
 
@@ -443,57 +408,40 @@ Delete
 <section class="quick-review">
 
 <h2>
-
-Add Another Review
-
+    Add Another Review
 </h2>
 
 <textarea
-
 id="newReview"
-
 placeholder="Write your experience...">
-
 </textarea>
 
 <select id="newRating">
 
-<option value="5">
+    <option value="5">
+        ⭐⭐⭐⭐⭐
+    </option>
 
-⭐⭐⭐⭐⭐
+    <option value="4">
+        ⭐⭐⭐⭐
+    </option>
 
-</option>
+    <option value="3">
+        ⭐⭐⭐
+    </option>
 
-<option value="4">
+    <option value="2">
+        ⭐⭐
+    </option>
 
-⭐⭐⭐⭐
-
-</option>
-
-<option value="3">
-
-⭐⭐⭐
-
-</option>
-
-<option value="2">
-
-⭐⭐
-
-</option>
-
-<option value="1">
-
-⭐
-
-</option>
+    <option value="1">
+        ⭐
+    </option>
 
 </select>
 
 <button id="submitReview">
-
-Submit Review
-
+    Submit Review
 </button>
 
 </section>
@@ -505,17 +453,16 @@ Submit Review
 <footer>
 
 <p>
+    © 2026 TravelVerse
 
-© 2026 TravelVerse
-
-Explore • Review • Inspire
-
+    Explore • Review • Inspire
 </p>
 
 </footer>
 
 
 
+<script src="/js/theme.js"></script>
 <script src="/js/hotel-details.js"></script>
 
 </body>

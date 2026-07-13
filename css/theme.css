@@ -1,0 +1,610 @@
+/* ==================================================
+   TravelVerse Global Theme
+   File: css/theme.css
+   Full Website Dark / Light / System / Accent Support
+================================================== */
+
+
+/* ================= DEFAULT VARIABLES ================= */
+
+:root {
+    --tv-primary: #6C63FF;
+    --tv-secondary: #8A2BE2;
+
+    --tv-bg: #f1f5f9;
+    --tv-card: #ffffff;
+    --tv-text: #111827;
+    --tv-muted: #64748b;
+    --tv-border: #e5e7eb;
+    --tv-input: #f8fafc;
+    --tv-soft: #eef2ff;
+
+    --tv-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ================= ACCENT COLORS ================= */
+
+body[data-accent="purple"] {
+    --tv-primary: #6C63FF;
+    --tv-secondary: #8A2BE2;
+    --tv-soft: #eef2ff;
+}
+
+body[data-accent="blue"] {
+    --tv-primary: #2563eb;
+    --tv-secondary: #06b6d4;
+    --tv-soft: #eff6ff;
+}
+
+body[data-accent="green"] {
+    --tv-primary: #16a34a;
+    --tv-secondary: #22c55e;
+    --tv-soft: #ecfdf5;
+}
+
+body[data-accent="orange"] {
+    --tv-primary: #f97316;
+    --tv-secondary: #f59e0b;
+    --tv-soft: #fff7ed;
+}
+
+
+/* ================= LIGHT MODE ================= */
+
+body[data-theme="light"] {
+    --tv-bg: #f1f5f9;
+    --tv-card: #ffffff;
+    --tv-text: #111827;
+    --tv-muted: #64748b;
+    --tv-border: #e5e7eb;
+    --tv-input: #f8fafc;
+    --tv-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ================= DARK MODE ================= */
+
+body[data-theme="dark"] {
+    --tv-bg: #0f172a;
+    --tv-card: #1e293b;
+    --tv-text: #e5e7eb;
+    --tv-muted: #94a3b8;
+    --tv-border: #334155;
+    --tv-input: #111827;
+    --tv-soft: #172554;
+    --tv-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ================= SYSTEM MODE ================= */
+
+@media (prefers-color-scheme: dark) {
+
+    body[data-theme="system"] {
+        --tv-bg: #0f172a;
+        --tv-card: #1e293b;
+        --tv-text: #e5e7eb;
+        --tv-muted: #94a3b8;
+        --tv-border: #334155;
+        --tv-input: #111827;
+        --tv-soft: #172554;
+        --tv-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+
+    body[data-theme="system"] {
+        --tv-bg: #f1f5f9;
+        --tv-card: #ffffff;
+        --tv-text: #111827;
+        --tv-muted: #64748b;
+        --tv-border: #e5e7eb;
+        --tv-input: #f8fafc;
+        --tv-soft: #eef2ff;
+        --tv-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+}
+
+
+/* ================= GLOBAL BODY ================= */
+
+body {
+    background: var(--tv-bg) !important;
+    color: var(--tv-text) !important;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* ================= NAVBAR / HEADER ================= */
+
+header,
+.navbar {
+    background: var(--tv-card) !important;
+    color: var(--tv-text) !important;
+    border-bottom: 1px solid var(--tv-border) !important;
+    box-shadow: var(--tv-shadow) !important;
+}
+
+.logo,
+.navbar .logo,
+header .logo {
+    color: var(--tv-primary) !important;
+}
+
+nav a,
+.nav-links a,
+.navbar a,
+header a {
+    color: var(--tv-text) !important;
+}
+
+nav a:hover,
+nav a.active,
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--tv-primary) !important;
+}
+
+
+/* Settings navbar premium gradient থাকবে */
+
+.settings-navbar {
+    background: linear-gradient(135deg, var(--tv-primary), var(--tv-secondary)) !important;
+    border-bottom: none !important;
+}
+
+.settings-navbar .logo,
+.settings-navbar nav a {
+    color: #ffffff !important;
+}
+
+.settings-navbar nav a.active,
+.settings-navbar nav a:hover {
+    color: #ffe082 !important;
+}
+
+
+/* ================= MAIN CARDS / SECTIONS ================= */
+
+.sidebar,
+.rightbar,
+.create-post,
+.post-card,
+.profile-card,
+.profile-hero,
+.profile-tabs,
+.hotel-card,
+.rating-box,
+.gallery,
+.save-hotel-box,
+.quick-review,
+.review-card,
+.saved-card,
+.saved-section,
+.notification-card,
+.stat-card,
+.notifications-header,
+.profile-summary-card,
+.settings-menu,
+.settings-section,
+.data-card,
+.security-card,
+.home-saved-widget,
+.upload-card,
+.tips,
+.tip {
+    background: var(--tv-card) !important;
+    color: var(--tv-text) !important;
+    border-color: var(--tv-border) !important;
+    box-shadow: var(--tv-shadow) !important;
+}
+
+
+/* ================= TEXT COLORS ================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--tv-text) !important;
+}
+
+p,
+small,
+label,
+span {
+    color: inherit;
+}
+
+.profile-basic p,
+.home-saved-item p,
+.trend-card p,
+.info p,
+.toggle-row p,
+.section-header p,
+.saved-hero p,
+.notifications-header p,
+.saved-card p,
+.notification-card p,
+.data-card p,
+.security-card p,
+.tips p {
+    color: var(--tv-muted) !important;
+}
+
+
+/* ================= INPUTS ================= */
+
+input,
+textarea,
+select {
+    background: var(--tv-input) !important;
+    color: var(--tv-text) !important;
+    border-color: var(--tv-border) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--tv-muted) !important;
+}
+
+
+/* ================= BUTTONS ================= */
+
+button,
+.primary-btn,
+.secondary-btn,
+.save-btn,
+.logout-btn,
+.create-post button,
+.search-box button,
+.quick-review button,
+.nav-icons button {
+    transition: 0.3s ease;
+}
+
+.primary-btn,
+.save-btn,
+.logout-btn,
+.create-post button,
+.search-box button,
+.quick-review button,
+.nav-icons button {
+    background: linear-gradient(135deg, var(--tv-primary), var(--tv-secondary)) !important;
+    color: #ffffff !important;
+}
+
+.secondary-btn {
+    background: var(--tv-soft) !important;
+    color: var(--tv-primary) !important;
+}
+
+
+/* ================= HOME PAGE ================= */
+
+.search,
+.saved-widget-counts div,
+.home-saved-item,
+.actions button {
+    background: var(--tv-input) !important;
+    color: var(--tv-text) !important;
+}
+
+.home-saved-item:hover {
+    background: var(--tv-soft) !important;
+}
+
+.trend-card h4 {
+    color: var(--tv-text) !important;
+}
+
+
+/* ================= SIDEBAR MENU ================= */
+
+.sidebar li a {
+    color: var(--tv-muted) !important;
+}
+
+.sidebar li a i {
+    color: var(--tv-primary) !important;
+}
+
+.sidebar li a:hover,
+.sidebar li:first-child a {
+    background: linear-gradient(135deg, var(--tv-primary), var(--tv-secondary)) !important;
+    color: #ffffff !important;
+}
+
+.sidebar li a:hover i,
+.sidebar li:first-child a i {
+    color: #ffffff !important;
+}
+
+
+/* ================= PROFILE PAGE ================= */
+
+.profile-tabs .tab-btn,
+.tab-btn {
+    background: var(--tv-card) !important;
+    color: var(--tv-text) !important;
+    border-color: var(--tv-border) !important;
+}
+
+.profile-tabs .tab-btn.active,
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--tv-primary), var(--tv-secondary)) !important;
+    color: #ffffff !important;
+}
+
+.about-list div,
+.saved-card,
+.review-card,
+.my-post-card,
+.photo-card {
+    background: var(--tv-input) !important;
+    color: var(--tv-text) !important;
+    border-color: var(--tv-border) !important;
+}
+
+.verified {
+    color: var(--tv-primary) !important;
+}
+
+.edit-cover-btn,
+.change-photo-btn {
+    background: linear-gradient(135deg, var(--tv-primary), var(--tv-secondary)) !important;
+    color: #ffffff !important;
+}
+
+
+/* ================= PLACES PAGE ================= */
+
+.card {
+    background: var(--tv-card) !important;
+    color: var(--tv-text) !important;
+    box-shadow: var(--tv-shadow) !important;
+}
+
+.content h2 {
+    color: var(--tv-text) !important;
+}
+
+.content p {
+    color: var(--tv-muted) !important;
+}
+
+.card-actions a button {
+    background: linear-gradient(135deg, var(--tv-primary), var(--tv-secondary)) !important;
+    color: #ffffff !important;
+}
+
+.save-place-btn {
+    background: var(--tv-card) !important;
+    color: var(--tv-primary) !important;
+    border-color: var(--tv-border) !important;
+}
+
+.save-place-btn:hover {
+    background: var(--tv-soft) !important;
+}
+
+.save-place-btn.saved {
+    background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+    color: #ffffff !important;
+}
+
+
+/* ================= HOTEL DETAILS PAGE ================= */
+
+.info p {
+    border-bottom-color: var(--tv-border) !important;
+}
+
+.info span,
+.info a {
+    color: var(--tv-primary) !important;
+}
+
+.facilities div {
+    background: var(--tv-soft) !important;
+    color: var(--tv-text) !important;
+}
+
+.save-hotel-btn {
+    background: var(--tv-card) !important;
+    color: var(--tv-primary) !important;
+    border-color: var(--tv-border) !important;
+}
+
+.save-hotel-btn:hover {
+    background: var(--tv-soft) !important;
+}
+
+.save-hotel-btn.saved {
+    background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+    color: #ffffff !important;
+}
+
+
+/* ================= SAVED PAGE ================= */
+
+.saved-hero {
+    background: linear-gradient(135deg, var(--tv-primary), var(--tv-secondary)) !important;
+    color: #ffffff !important;
+}
+
+.saved-hero h1,
+.saved-hero p,
+.saved-hero i {
+    color: #ffffff !important;
+}
+
+.saved-item,
+.saved-grid > div {
+    background: var(--tv-card) !important;
+    color: var(--tv-text) !important;
+    border-color: var(--tv-border) !important;
+    box-shadow: var(--tv-shadow) !important;
+}
+
+.saved-info h3,
+.saved-info h4 {
+    color: var(--tv-text) !important;
+}
+
+.saved-info p {
+    color: var(--tv-muted) !important;
+}
+
+
+/* ================= NOTIFICATIONS PAGE ================= */
+
+.notification-item,
+.notification-list > div {
+    background: var(--tv-input) !important;
+    color: var(--tv-text) !important;
+    border-color: var(--tv-border) !important;
+}
+
+.notification-item.unread {
+    background: var(--tv-soft) !important;
+}
+
+.notification-icon,
+.stat-card i {
+    background: var(--tv-soft) !important;
+    color: var(--tv-primary) !important;
+}
+
+
+/* ================= UPLOAD PAGE ================= */
+
+.image-preview,
+.image-actions,
+.tip {
+    background: var(--tv-input) !important;
+    color: var(--tv-text) !important;
+    border-color: var(--tv-border) !important;
+}
+
+.upload-card h1,
+.tips h2 {
+    color: var(--tv-text) !important;
+}
+
+
+/* ================= SETTINGS PAGE SUPPORT ================= */
+
+body[data-theme="dark"] {
+    --bg: var(--tv-bg);
+    --card: var(--tv-card);
+    --text: var(--tv-text);
+    --muted: var(--tv-muted);
+    --border: var(--tv-border);
+    --soft: var(--tv-soft);
+    --shadow: var(--tv-shadow);
+}
+
+body[data-theme="light"],
+body[data-theme="system"] {
+    --bg: var(--tv-bg);
+    --card: var(--tv-card);
+    --text: var(--tv-text);
+    --muted: var(--tv-muted);
+    --border: var(--tv-border);
+    --soft: var(--tv-soft);
+    --shadow: var(--tv-shadow);
+}
+
+body[data-accent="purple"],
+body[data-accent="blue"],
+body[data-accent="green"],
+body[data-accent="orange"] {
+    --primary: var(--tv-primary);
+    --secondary: var(--tv-secondary);
+}
+
+
+/* ================= HERO AREAS ================= */
+
+.hero,
+.settings-hero {
+    background: linear-gradient(135deg, var(--tv-primary), var(--tv-secondary)) !important;
+    color: #ffffff !important;
+}
+
+.hero h1,
+.hero p,
+.settings-hero h1,
+.settings-hero p,
+.settings-hero span {
+    color: #ffffff !important;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #111827 !important;
+    color: #ffffff !important;
+}
+
+footer p {
+    color: #ffffff !important;
+}
+
+
+/* ================= DARK MODE IMAGE POLISH ================= */
+
+body[data-theme="dark"] img {
+    filter: brightness(0.92);
+}
+
+body[data-theme="dark"] .cover-overlay {
+    background: rgba(0, 0, 0, 0.58) !important;
+}
+
+body[data-theme="dark"] .notification-badge {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+}
+
+
+/* ================= ICON COLORS ================= */
+
+i {
+    color: inherit;
+}
+
+.saved-widget-counts i,
+.data-card i,
+.section-header > i,
+.settings-menu-btn i,
+.traveler-badge i {
+    color: var(--tv-primary) !important;
+}
+
+
+/* ================= COLOR DOT FIX ================= */
+
+.color-dot.purple {
+    background: linear-gradient(135deg, #6C63FF, #8A2BE2) !important;
+}
+
+.color-dot.blue {
+    background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+}
+
+.color-dot.green {
+    background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+}
+
+.color-dot.orange {
+    background: linear-gradient(135deg, #f97316, #f59e0b) !important;
+}

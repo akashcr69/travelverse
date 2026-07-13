@@ -1,0 +1,716 @@
+<!-- ==========================================================
+Module 10 : settings.html
+TravelVerse - Control Center / Settings Page
+========================================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TravelVerse | Settings</title>
+
+<link rel="stylesheet" href="/css/settings.css">
+<link rel="stylesheet" href="/css/theme.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="settings-navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-earth-americas"></i>
+        TravelVerse
+    </div>
+
+    <nav>
+
+        <a href="home.html">
+            Home
+        </a>
+
+        <a href="places.html">
+            Places
+        </a>
+
+        <a href="upload.html">
+            Upload Review
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+        <a href="saved.html">
+            Saved
+        </a>
+
+        <a href="settings.html" class="active">
+            Settings
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="settings-hero">
+
+    <div>
+
+        <span class="hero-badge">
+            Premium Control Center
+        </span>
+
+        <h1>
+            Settings & Preferences
+        </h1>
+
+        <p>
+            Manage your TravelVerse account, appearance, notifications, privacy and saved travel data from one place.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MAIN WRAPPER ================= -->
+
+<main class="settings-wrapper">
+
+
+
+<!-- ================= PROFILE SUMMARY ================= -->
+
+<section class="profile-summary-card">
+
+    <div class="profile-left">
+
+        <img 
+        id="settingsProfileImage"
+        src="assets/WhatsApp Image 2026-07-13 at 03.10.00.jpeg"
+        alt="Profile">
+
+        <div>
+
+            <h2 id="settingsProfileName">
+                Partho Singh
+            </h2>
+
+            <p id="settingsUsername">
+                @partho_singh
+            </p>
+
+            <span class="traveler-badge">
+                <i class="fa-solid fa-plane-departure"></i>
+                Travel Enthusiast
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="profile-right">
+
+        <div>
+            <h3 id="settingsSavedPlaceCount">
+                0
+            </h3>
+            <p>Saved Places</p>
+        </div>
+
+        <div>
+            <h3 id="settingsSavedHotelCount">
+                0
+            </h3>
+            <p>Saved Hotels</p>
+        </div>
+
+        <div>
+            <h3 id="settingsPostCount">
+                0
+            </h3>
+            <p>Posts</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SETTINGS LAYOUT ================= -->
+
+<section class="settings-layout">
+
+
+
+<!-- LEFT MENU -->
+
+<aside class="settings-menu">
+
+    <button class="settings-menu-btn active" data-section="accountSection">
+        <i class="fa-solid fa-user"></i>
+        Account
+    </button>
+
+    <button class="settings-menu-btn" data-section="appearanceSection">
+        <i class="fa-solid fa-palette"></i>
+        Appearance
+    </button>
+
+    <button class="settings-menu-btn" data-section="notificationSection">
+        <i class="fa-solid fa-bell"></i>
+        Notifications
+    </button>
+
+    <button class="settings-menu-btn" data-section="privacySection">
+        <i class="fa-solid fa-shield-halved"></i>
+        Privacy
+    </button>
+
+    <button class="settings-menu-btn" data-section="dataSection">
+        <i class="fa-solid fa-database"></i>
+        Saved Data
+    </button>
+
+    <button class="settings-menu-btn" data-section="securitySection">
+        <i class="fa-solid fa-lock"></i>
+        Security
+    </button>
+
+    <button class="settings-menu-btn danger-link" data-section="dangerSection">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        Danger Zone
+    </button>
+
+</aside>
+
+
+
+<!-- RIGHT CONTENT -->
+
+<div class="settings-content">
+
+
+
+<!-- ACCOUNT SETTINGS -->
+
+<section class="settings-section active" id="accountSection">
+
+    <div class="section-header">
+
+        <div>
+            <h2>
+                Account Settings
+            </h2>
+
+            <p>
+                Update your basic TravelVerse profile information.
+            </p>
+        </div>
+
+        <i class="fa-solid fa-user-gear"></i>
+
+    </div>
+
+    <form id="accountForm" class="settings-form">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="settingName" placeholder="Your full name">
+            </div>
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="settingUsername" placeholder="username">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="settingEmail" placeholder="email@example.com">
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" id="settingLocation" placeholder="Rajshahi, Bangladesh">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label>Bio</label>
+            <textarea id="settingBio" placeholder="Write something about yourself..."></textarea>
+        </div>
+
+        <button type="submit" class="primary-btn">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Save Account
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- APPEARANCE SETTINGS -->
+
+<section class="settings-section" id="appearanceSection">
+
+    <div class="section-header">
+
+        <div>
+            <h2>
+                Appearance
+            </h2>
+
+            <p>
+                Customize the look and feel of your TravelVerse experience.
+            </p>
+        </div>
+
+        <i class="fa-solid fa-palette"></i>
+
+    </div>
+
+    <div class="option-group">
+
+        <h3>
+            Theme Mode
+        </h3>
+
+        <div class="theme-options">
+
+            <label class="theme-card">
+                <input type="radio" name="themeMode" value="light">
+                <span>
+                    <i class="fa-solid fa-sun"></i>
+                    Light Mode
+                </span>
+            </label>
+
+            <label class="theme-card">
+                <input type="radio" name="themeMode" value="dark">
+                <span>
+                    <i class="fa-solid fa-moon"></i>
+                    Dark Mode
+                </span>
+            </label>
+
+            <label class="theme-card">
+                <input type="radio" name="themeMode" value="system">
+                <span>
+                    <i class="fa-solid fa-desktop"></i>
+                    System Default
+                </span>
+            </label>
+
+        </div>
+
+    </div>
+
+    <div class="option-group">
+
+        <h3>
+            Accent Color
+        </h3>
+
+        <div class="color-options">
+
+            <button class="color-dot purple active" data-color="purple"></button>
+
+            <button class="color-dot blue" data-color="blue"></button>
+
+            <button class="color-dot green" data-color="green"></button>
+
+            <button class="color-dot orange" data-color="orange"></button>
+
+        </div>
+
+    </div>
+
+    <button class="primary-btn" onclick="saveAppearanceSettings()">
+        <i class="fa-solid fa-check"></i>
+        Save Appearance
+    </button>
+
+</section>
+
+
+
+<!-- NOTIFICATION SETTINGS -->
+
+<section class="settings-section" id="notificationSection">
+
+    <div class="section-header">
+
+        <div>
+            <h2>
+                Notifications
+            </h2>
+
+            <p>
+                Control what type of activity you want to be notified about.
+            </p>
+        </div>
+
+        <i class="fa-solid fa-bell"></i>
+
+    </div>
+
+    <div class="toggle-list">
+
+        <div class="toggle-row">
+            <div>
+                <h3>Post Likes</h3>
+                <p>Receive notifications when someone likes your post.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" id="notifyLikes">
+                <span></span>
+            </label>
+        </div>
+
+        <div class="toggle-row">
+            <div>
+                <h3>Comments</h3>
+                <p>Receive notifications when someone comments on your post.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" id="notifyComments">
+                <span></span>
+            </label>
+        </div>
+
+        <div class="toggle-row">
+            <div>
+                <h3>Saved Place Reminder</h3>
+                <p>Get reminders about your saved places and hotels.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" id="notifySaved">
+                <span></span>
+            </label>
+        </div>
+
+        <div class="toggle-row">
+            <div>
+                <h3>Travel Updates</h3>
+                <p>Receive travel inspiration and destination updates.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" id="notifyTravel">
+                <span></span>
+            </label>
+        </div>
+
+    </div>
+
+    <button class="primary-btn" onclick="saveNotificationSettings()">
+        <i class="fa-solid fa-bell"></i>
+        Save Notifications
+    </button>
+
+</section>
+
+
+
+<!-- PRIVACY SETTINGS -->
+
+<section class="settings-section" id="privacySection">
+
+    <div class="section-header">
+
+        <div>
+            <h2>
+                Privacy
+            </h2>
+
+            <p>
+                Decide what information others can see on your profile.
+            </p>
+        </div>
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+    </div>
+
+    <div class="toggle-list">
+
+        <div class="toggle-row">
+            <div>
+                <h3>Public Profile</h3>
+                <p>Allow other travelers to view your profile.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" id="privacyPublicProfile">
+                <span></span>
+            </label>
+        </div>
+
+        <div class="toggle-row">
+            <div>
+                <h3>Show Saved Places</h3>
+                <p>Show your saved travel collection on profile.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" id="privacySavedPlaces">
+                <span></span>
+            </label>
+        </div>
+
+        <div class="toggle-row">
+            <div>
+                <h3>Show Reviews</h3>
+                <p>Allow others to see your hotel and place reviews.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" id="privacyReviews">
+                <span></span>
+            </label>
+        </div>
+
+        <div class="toggle-row">
+            <div>
+                <h3>Show Email</h3>
+                <p>Display your email address on your profile.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox" id="privacyEmail">
+                <span></span>
+            </label>
+        </div>
+
+    </div>
+
+    <button class="primary-btn" onclick="savePrivacySettings()">
+        <i class="fa-solid fa-shield"></i>
+        Save Privacy
+    </button>
+
+</section>
+
+
+
+<!-- SAVED DATA MANAGER -->
+
+<section class="settings-section" id="dataSection">
+
+    <div class="section-header">
+
+        <div>
+            <h2>
+                Saved Data Manager
+            </h2>
+
+            <p>
+                Manage your saved places, hotels, posts and reviews.
+            </p>
+        </div>
+
+        <i class="fa-solid fa-database"></i>
+
+    </div>
+
+    <div class="data-grid">
+
+        <div class="data-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3 id="dataSavedPlaces">0</h3>
+            <p>Saved Places</p>
+            <button onclick="clearSavedPlaces()">Clear Places</button>
+        </div>
+
+        <div class="data-card">
+            <i class="fa-solid fa-hotel"></i>
+            <h3 id="dataSavedHotels">0</h3>
+            <p>Saved Hotels</p>
+            <button onclick="clearSavedHotels()">Clear Hotels</button>
+        </div>
+
+        <div class="data-card">
+            <i class="fa-solid fa-image"></i>
+            <h3 id="dataPosts">0</h3>
+            <p>Travel Posts</p>
+            <button onclick="clearPosts()">Clear Posts</button>
+        </div>
+
+        <div class="data-card">
+            <i class="fa-solid fa-star"></i>
+            <h3 id="dataReviews">0</h3>
+            <p>Reviews</p>
+            <button onclick="clearReviews()">Clear Reviews</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SECURITY SETTINGS -->
+
+<section class="settings-section" id="securitySection">
+
+    <div class="section-header">
+
+        <div>
+            <h2>
+                Security
+            </h2>
+
+            <p>
+                View your login and account security status.
+            </p>
+        </div>
+
+        <i class="fa-solid fa-lock"></i>
+
+    </div>
+
+    <div class="security-card">
+
+        <div>
+            <h3>Login Email</h3>
+            <p id="securityEmail">traveler@gmail.com</p>
+        </div>
+
+        <span class="status-badge">
+            Active
+        </span>
+
+    </div>
+
+    <div class="security-card">
+
+        <div>
+            <h3>Last Login</h3>
+            <p id="lastLoginText">Today</p>
+        </div>
+
+        <span class="status-badge safe">
+            Safe
+        </span>
+
+    </div>
+
+    <div class="security-card">
+
+        <div>
+            <h3>Password Status</h3>
+            <p>Demo frontend account password.</p>
+        </div>
+
+        <button class="secondary-btn" onclick="changePasswordDemo()">
+            Change Password
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- DANGER ZONE -->
+
+<section class="settings-section" id="dangerSection">
+
+    <div class="section-header danger-header">
+
+        <div>
+            <h2>
+                Danger Zone
+            </h2>
+
+            <p>
+                These actions are permanent for this browser demo data.
+            </p>
+        </div>
+
+        <i class="fa-solid fa-triangle-exclamation"></i>
+
+    </div>
+
+    <div class="danger-box">
+
+        <div>
+            <h3>Clear All TravelVerse Data</h3>
+            <p>This will remove posts, reviews, saved places, saved hotels, notifications and settings from this browser.</p>
+        </div>
+
+        <button onclick="clearAllAppData()">
+            Clear All Data
+        </button>
+
+    </div>
+
+    <div class="danger-box">
+
+        <div>
+            <h3>Logout Account</h3>
+            <p>Logout from your current TravelVerse session.</p>
+        </div>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</section>
+
+
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 TravelVerse — Explore • Review • Inspire
+    </p>
+
+</footer>
+
+
+
+<script src="/js/theme.js"></script>
+<script src="/js/settings.js"></script>
+
+</body>
+
+</html>

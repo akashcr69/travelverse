@@ -1,8 +1,8 @@
-/* ============================================
+/* ==========================================
    TravelVerse
    Hotel Details Page
-   File : css/hotel-details.css
-============================================ */
+   File : hotel-details.css
+========================================== */
 
 *{
     margin:0;
@@ -19,17 +19,17 @@ body{
 /* ================= HEADER ================= */
 
 header{
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
-    height:80px;
+    height:75px;
     background:linear-gradient(135deg,#6C63FF,#8A2BE2);
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 8%;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:999;
+    padding:0 6%;
+    z-index:1000;
     box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
@@ -41,26 +41,26 @@ header{
 
 nav{
     display:flex;
-    gap:30px;
+    gap:25px;
 }
 
 nav a{
     text-decoration:none;
     color:#fff;
-    transition:.3s;
     font-weight:500;
+    transition:.3s;
 }
 
 nav a:hover{
-    color:#FFD54F;
+    color:#ffe082;
 }
 
 /* ================= COVER ================= */
 
 .cover{
-    margin-top:80px;
+    margin-top:75px;
     position:relative;
-    height:420px;
+    height:380px;
     overflow:hidden;
 }
 
@@ -78,475 +78,349 @@ nav a:hover{
     flex-direction:column;
     justify-content:flex-end;
     padding:50px;
-    color:white;
+    color:#fff;
 }
 
 .cover-overlay h1{
-    font-size:48px;
+    font-size:45px;
     margin-bottom:10px;
 }
 
 .cover-overlay p{
-    font-size:20px;
+    font-size:18px;
 }
 
-/* ================= CONTAINER ================= */
+/* ================= MAIN ================= */
 
 .container{
-
     width:90%;
     max-width:1400px;
-
     margin:40px auto;
-
     display:grid;
-
     grid-template-columns:2fr 1fr;
-
     gap:30px;
-
 }
 
-/* ================= HOTEL CARD ================= */
+/* ================= CARD ================= */
 
-.hotel-card{
-
+.hotel-card,
+.rating-box,
+.gallery,
+.save-hotel-box{
     background:#fff;
-
-    border-radius:18px;
-
+    border-radius:20px;
     padding:25px;
-
     margin-bottom:25px;
-
     box-shadow:0 10px 25px rgba(0,0,0,.08);
-
 }
 
-.hotel-card h2{
-
+.hotel-card h2,
+.rating-box h2,
+.gallery h2,
+.save-hotel-box h2{
     margin-bottom:20px;
-
     color:#6C63FF;
-
 }
 
-.hotel-card p{
+/* ================= INFO ================= */
 
-    margin-bottom:15px;
-
-    line-height:1.8;
-
+.info p{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:18px;
+    padding-bottom:12px;
+    border-bottom:1px solid #eee;
 }
 
-.hotel-card span{
-
+.info span{
     font-weight:600;
+}
 
+.info a{
+    color:#6C63FF;
+    text-decoration:none;
 }
 
 /* ================= FACILITIES ================= */
 
 .facilities{
-
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
     gap:15px;
-
 }
 
 .facilities div{
-
-    background:#EEF2FF;
-
-    padding:14px;
-
+    background:#eef2ff;
+    padding:12px;
     border-radius:10px;
-
-    transition:.3s;
-
-}
-
-.facilities div:hover{
-
-    background:#6C63FF;
-
-    color:white;
-
+    text-align:center;
+    font-weight:500;
 }
 
 /* ================= RATING ================= */
 
 .rating-box{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:30px;
-
     text-align:center;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-}
-
-.rating-box h2{
-
-    color:#6C63FF;
-
-    margin-bottom:15px;
-
 }
 
 .rating-box h1{
+    color:#ff9800;
+    font-size:55px;
+    margin:15px 0;
+}
 
-    font-size:60px;
+.rating-box p{
+    color:#777;
+}
 
-    color:#FF9800;
+/* ================= SAVE HOTEL BOX ================= */
 
-    margin-bottom:10px;
+.save-hotel-box{
+    text-align:center;
+}
 
+.save-hotel-box p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.save-hotel-btn{
+    width:100%;
+    height:52px;
+    border:none;
+    border-radius:16px;
+    background:#ffffff;
+    color:#6C63FF;
+    border:1.5px solid #dcd9ff;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    transition:0.3s ease;
+}
+
+.save-hotel-btn:hover{
+    background:#eef2ff;
+    transform:translateY(-3px);
+}
+
+/* Saved State - Click Again to Remove */
+
+.save-hotel-btn.saved{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:#ffffff;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 10px 22px rgba(34,197,94,0.28);
+}
+
+.save-hotel-btn.saved:hover{
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+    color:#ffffff;
+    transform:translateY(-3px);
+    box-shadow:0 12px 26px rgba(239,68,68,0.30);
 }
 
 /* ================= GALLERY ================= */
 
-.gallery{
-
-    background:white;
-
-    margin-top:25px;
-
-    padding:25px;
-
-    border-radius:18px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-}
-
-.gallery h2{
-
-    margin-bottom:20px;
-
-    color:#6C63FF;
-
-}
-
 .gallery-grid{
-
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
-    gap:15px;
-
+    gap:12px;
 }
 
 .gallery-grid img{
-
     width:100%;
-
     height:150px;
-
     object-fit:cover;
-
     border-radius:12px;
-
     transition:.3s;
-
+    cursor:pointer;
 }
 
 .gallery-grid img:hover{
-
     transform:scale(1.05);
-
 }
 
 /* ================= REVIEWS ================= */
 
 .reviews-section{
-
     width:90%;
-
     max-width:1400px;
-
     margin:auto;
-
-    padding-bottom:30px;
-
 }
 
 .reviews-section h2{
-
     margin-bottom:20px;
-
 }
 
 .review-card{
-
-    background:white;
-
-    padding:25px;
-
+    background:#fff;
     border-radius:18px;
-
+    padding:20px;
     margin-bottom:20px;
-
     box-shadow:0 10px 25px rgba(0,0,0,.08);
-
 }
 
 .review-header{
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
-    margin-bottom:20px;
-
+    margin-bottom:15px;
 }
 
 .review-header img{
-
-    width:70px;
-
-    height:70px;
-
+    width:60px;
+    height:60px;
     border-radius:50%;
-
     object-fit:cover;
+}
 
+.review-header h3{
+    margin-bottom:5px;
 }
 
 .review-footer{
-
     display:flex;
-
     gap:15px;
-
     margin-top:20px;
+}
 
+.edit-btn,
+.delete-btn{
+    border:none;
+    padding:10px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    color:#fff;
+    font-weight:500;
 }
 
 .edit-btn{
-
-    background:#4CAF50;
-
-    color:white;
-
-    border:none;
-
-    padding:10px 20px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
+    background:#6C63FF;
 }
 
 .delete-btn{
-
-    background:#F44336;
-
-    color:white;
-
-    border:none;
-
-    padding:10px 20px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
+    background:#e53935;
 }
 
-/* ================= ADD REVIEW ================= */
+/* ================= QUICK REVIEW ================= */
 
 .quick-review{
-
     width:90%;
-
     max-width:1400px;
-
     margin:40px auto;
-
-    background:white;
-
+    background:#fff;
     padding:30px;
-
-    border-radius:18px;
-
+    border-radius:20px;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
-
 }
 
 .quick-review h2{
-
     margin-bottom:20px;
-
 }
 
 .quick-review textarea{
-
     width:100%;
-
-    height:160px;
-
-    border:1px solid #ddd;
-
-    border-radius:10px;
-
+    height:150px;
     padding:15px;
-
+    border:1px solid #ddd;
+    border-radius:12px;
     resize:none;
-
     outline:none;
-
     margin-bottom:20px;
-
 }
 
 .quick-review select{
-
     width:100%;
-
     padding:15px;
-
+    border-radius:12px;
     border:1px solid #ddd;
-
-    border-radius:10px;
-
     margin-bottom:20px;
-
 }
 
 .quick-review button{
-
     width:100%;
-
     padding:16px;
-
     border:none;
-
-    border-radius:10px;
-
+    border-radius:12px;
     background:linear-gradient(135deg,#6C63FF,#8A2BE2);
-
-    color:white;
-
-    font-size:17px;
-
+    color:#fff;
+    font-size:16px;
     cursor:pointer;
-
     transition:.3s;
-
 }
 
 .quick-review button:hover{
-
-    transform:translateY(-3px);
-
+    transform:translateY(-2px);
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-
-    background:#1F2937;
-
-    color:white;
-
+    margin-top:50px;
+    background:#1f2937;
+    color:#fff;
     text-align:center;
-
     padding:25px;
-
-    margin-top:40px;
-
 }
 
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:1000px){
 
-.container{
+    .container{
+        grid-template-columns:1fr;
+    }
 
-    grid-template-columns:1fr;
-
-}
-
-.facilities{
-
-    grid-template-columns:1fr;
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
 
 }
 
-.gallery-grid{
+@media(max-width:768px){
 
-    grid-template-columns:1fr;
+    header{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+    }
 
-}
+    nav{
+        margin-top:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
 
-}
+    .cover{
+        height:260px;
+    }
 
-@media(max-width:700px){
+    .cover-overlay{
+        padding:25px;
+    }
 
-header{
+    .cover-overlay h1{
+        font-size:30px;
+    }
 
-    flex-direction:column;
+    .facilities{
+        grid-template-columns:1fr;
+    }
 
-    height:auto;
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
 
-    padding:20px;
-
-}
-
-nav{
-
-    margin-top:15px;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:15px;
-
-}
-
-.cover{
-
-    height:280px;
-
-}
-
-.cover-overlay h1{
-
-    font-size:32px;
-
-}
-
-.cover-overlay p{
-
-    font-size:16px;
-
-}
-
-.review-header{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-}
-
-.review-footer{
-
-    flex-direction:column;
-
-}
+    .review-footer{
+        flex-direction:column;
+    }
 
 }
