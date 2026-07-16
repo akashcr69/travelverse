@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TravelVerse | Traveler Reviews</title>
+
+    <link rel="stylesheet" href="/css/reviews.css">
+    <link rel="stylesheet" href="/css/theme.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <i class="fa-solid fa-earth-americas"></i>
+
+        <span>TravelVerse</span>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="home.html">Home</a>
+
+        <a href="places.html">Tourist Spots</a>
+
+        <a href="reviews.html" class="active">Traveler Reviews</a>
+
+        <a href="index.html#about">About</a>
+
+        <a href="index.html#contact">Contact</a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <a
+            href="notifications.html"
+            class="notification-link"
+            title="Notifications">
+
+            <i class="fa-solid fa-bell"></i>
+
+        </a>
+
+        <button
+            type="button"
+            class="write-review-nav-btn"
+            id="navWriteReviewBtn">
+
+            <i class="fa-solid fa-pen-to-square"></i>
+
+            Write Review
+
+        </button>
+
+        <button
+            type="button"
+            class="logout-btn"
+            onclick="logoutUser(event)">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="reviews-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+
+            <i class="fa-solid fa-star"></i>
+
+            Trusted Traveler Experiences
+
+        </span>
+
+        <h1>
+            Real Stories from
+            <span>Real Travelers</span>
+        </h1>
+
+        <p>
+            Discover honest destination reviews, practical travel advice
+            and memorable experiences shared by the TravelVerse community.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="heroWriteReviewBtn">
+
+                <i class="fa-solid fa-pen"></i>
+
+                Write a Review
+
+            </button>
+
+            <a href="#reviewsSection" class="secondary-btn">
+
+                <i class="fa-solid fa-comments"></i>
+
+                Explore Reviews
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-stats">
+
+        <div class="hero-stat">
+
+            <i class="fa-solid fa-star"></i>
+
+            <div>
+
+                <h3 id="averageRatingStat">0.0</h3>
+
+                <p>Average Rating</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-stat">
+
+            <i class="fa-solid fa-message"></i>
+
+            <div>
+
+                <h3 id="totalReviewsStat">0</h3>
+
+                <p>Traveler Reviews</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-stat">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <div>
+
+                <h3 id="totalDestinationsStat">0</h3>
+
+                <p>Destinations</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DESTINATION OVERVIEW ================= -->
+
+<section class="destination-overview">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-badge">
+                Destination Insights
+            </span>
+
+            <h2>Top Rated Destinations</h2>
+
+            <p>
+                Compare popular destinations using ratings from real travelers.
+            </p>
+
+        </div>
+
+        <a href="places.html" class="view-all-link">
+
+            View All Places
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="destination-rating-grid">
+
+        <article class="destination-rating-card">
+
+            <div class="destination-card-top">
+
+                <div class="destination-icon">
+
+                    <i class="fa-solid fa-umbrella-beach"></i>
+
+                </div>
+
+                <span class="destination-score">4.9</span>
+
+            </div>
+
+            <h3>Cox's Bazar</h3>
+
+            <p>
+                Chattogram, Bangladesh
+            </p>
+
+            <div class="rating-progress-row">
+
+                <span>Scenery</span>
+
+                <div class="rating-progress">
+                    <span style="width: 98%;"></span>
+                </div>
+
+                <strong>4.9</strong>
+
+            </div>
+
+            <div class="rating-progress-row">
+
+                <span>Hotels</span>
+
+                <div class="rating-progress">
+                    <span style="width: 92%;"></span>
+                </div>
+
+                <strong>4.6</strong>
+
+            </div>
+
+            <div class="rating-progress-row">
+
+                <span>Value</span>
+
+                <div class="rating-progress">
+                    <span style="width: 90%;"></span>
+                </div>
+
+                <strong>4.5</strong>
+
+            </div>
+
+        </article>
+
+
+        <article class="destination-rating-card">
+
+            <div class="destination-card-top">
+
+                <div class="destination-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </div>
+
+                <span class="destination-score">4.8</span>
+
+            </div>
+
+            <h3>Sajek Valley</h3>
+
+            <p>
+                Rangamati, Bangladesh
+            </p>
+
+            <div class="rating-progress-row">
+
+                <span>Scenery</span>
+
+                <div class="rating-progress">
+                    <span style="width: 98%;"></span>
+                </div>
+
+                <strong>4.9</strong>
+
+            </div>
+
+            <div class="rating-progress-row">
+
+                <span>Hotels</span>
+
+                <div class="rating-progress">
+                    <span style="width: 88%;"></span>
+                </div>
+
+                <strong>4.4</strong>
+
+            </div>
+
+            <div class="rating-progress-row">
+
+                <span>Value</span>
+
+                <div class="rating-progress">
+                    <span style="width: 92%;"></span>
+                </div>
+
+                <strong>4.6</strong>
+
+            </div>
+
+        </article>
+
+
+        <article class="destination-rating-card">
+
+            <div class="destination-card-top">
+
+                <div class="destination-icon">
+
+                    <i class="fa-solid fa-tree"></i>
+
+                </div>
+
+                <span class="destination-score">4.7</span>
+
+            </div>
+
+            <h3>Sundarbans</h3>
+
+            <p>
+                Khulna, Bangladesh
+            </p>
+
+            <div class="rating-progress-row">
+
+                <span>Nature</span>
+
+                <div class="rating-progress">
+                    <span style="width: 96%;"></span>
+                </div>
+
+                <strong>4.8</strong>
+
+            </div>
+
+            <div class="rating-progress-row">
+
+                <span>Safety</span>
+
+                <div class="rating-progress">
+                    <span style="width: 86%;"></span>
+                </div>
+
+                <strong>4.3</strong>
+
+            </div>
+
+            <div class="rating-progress-row">
+
+                <span>Value</span>
+
+                <div class="rating-progress">
+                    <span style="width: 90%;"></span>
+                </div>
+
+                <strong>4.5</strong>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEWS SECTION ================= -->
+
+<section class="reviews-section" id="reviewsSection">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-badge">
+                Community Reviews
+            </span>
+
+            <h2>Traveler Experiences</h2>
+
+            <p>
+                Read honest reviews before planning your next adventure.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="write-review-section-btn"
+            id="sectionWriteReviewBtn">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Your Review
+
+        </button>
+
+    </div>
+
+
+    <!-- FILTER TOOLBAR -->
+
+    <div class="review-toolbar">
+
+        <div class="review-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="reviewSearchInput"
+                placeholder="Search destination, traveler or review...">
+
+        </div>
+
+
+        <select id="destinationFilter">
+
+            <option value="all">All Destinations</option>
+
+            <option value="Cox's Bazar">Cox's Bazar</option>
+
+            <option value="Sajek Valley">Sajek Valley</option>
+
+            <option value="Saint Martin">Saint Martin</option>
+
+            <option value="Sundarbans">Sundarbans</option>
+
+            <option value="Bandarban">Bandarban</option>
+
+            <option value="Sylhet">Sylhet</option>
+
+        </select>
+
+
+        <select id="ratingFilter">
+
+            <option value="all">All Ratings</option>
+
+            <option value="5">5 Stars</option>
+
+            <option value="4">4 Stars & Up</option>
+
+            <option value="3">3 Stars & Up</option>
+
+        </select>
+
+
+        <select id="sortFilter">
+
+            <option value="newest">Newest Reviews</option>
+
+            <option value="highest">Highest Rated</option>
+
+            <option value="helpful">Most Helpful</option>
+
+        </select>
+
+    </div>
+
+
+    <!-- REVIEWS LAYOUT -->
+
+    <div class="reviews-layout">
+
+        <div class="reviews-feed">
+
+            <div id="reviewsContainer"></div>
+
+
+            <div class="empty-reviews" id="emptyReviewsState">
+
+                <i class="fa-solid fa-comments"></i>
+
+                <h3>No reviews found</h3>
+
+                <p>
+                    Try changing your search or filter options.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDEBAR -->
+
+        <aside class="reviews-sidebar">
+
+            <section class="review-summary-card">
+
+                <span class="summary-label">
+                    Community Rating
+                </span>
+
+                <div class="summary-score">
+
+                    <h2 id="sidebarAverageRating">0.0</h2>
+
+                    <div>
+
+                        <div class="summary-stars" id="sidebarRatingStars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            Based on
+                            <span id="sidebarReviewCount">0</span>
+                            reviews
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rating-breakdown">
+
+                    <div>
+
+                        <span>5 Star</span>
+
+                        <div>
+                            <span id="fiveStarBar"></span>
+                        </div>
+
+                        <strong id="fiveStarCount">0</strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>4 Star</span>
+
+                        <div>
+                            <span id="fourStarBar"></span>
+                        </div>
+
+                        <strong id="fourStarCount">0</strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>3 Star</span>
+
+                        <div>
+                            <span id="threeStarBar"></span>
+                        </div>
+
+                        <strong id="threeStarCount">0</strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>2 Star</span>
+
+                        <div>
+                            <span id="twoStarBar"></span>
+                        </div>
+
+                        <strong id="twoStarCount">0</strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>1 Star</span>
+
+                        <div>
+                            <span id="oneStarBar"></span>
+                        </div>
+
+                        <strong id="oneStarCount">0</strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="review-guideline-card">
+
+                <div class="guideline-icon">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                </div>
+
+                <h3>Review Guidelines</h3>
+
+                <p>
+                    Help travelers by sharing accurate and respectful experiences.
+                </p>
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Share a real travel experience
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Mention useful travel details
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Avoid offensive language
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Upload relevant photographs
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WRITE REVIEW MODAL ================= -->
+
+<div class="review-modal" id="reviewModal" aria-hidden="true">
+
+    <div class="review-modal-overlay" id="reviewModalOverlay"></div>
+
+
+    <div class="review-modal-content">
+
+        <button
+            type="button"
+            class="modal-close-btn"
+            id="closeReviewModalBtn"
+            aria-label="Close review form">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-heading">
+
+            <span class="modal-icon">
+
+                <i class="fa-solid fa-pen-to-square"></i>
+
+            </span>
+
+            <div>
+
+                <h2>Share Your Travel Experience</h2>
+
+                <p>
+                    Your honest review can help other travelers plan better.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form id="reviewForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="reviewDestination">
+                        Destination
+                    </label>
+
+                    <select id="reviewDestination" required>
+
+                        <option value="">Select Destination</option>
+
+                        <option value="Cox's Bazar">Cox's Bazar</option>
+
+                        <option value="Sajek Valley">Sajek Valley</option>
+
+                        <option value="Saint Martin">Saint Martin</option>
+
+                        <option value="Sundarbans">Sundarbans</option>
+
+                        <option value="Bandarban">Bandarban</option>
+
+                        <option value="Sylhet">Sylhet</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="travelDate">
+                        Travel Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="travelDate"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Overall Rating
+                </label>
+
+                <div class="star-rating-input" id="starRatingInput">
+
+                    <button type="button" data-rating="1">
+                        <i class="fa-solid fa-star"></i>
+                    </button>
+
+                    <button type="button" data-rating="2">
+                        <i class="fa-solid fa-star"></i>
+                    </button>
+
+                    <button type="button" data-rating="3">
+                        <i class="fa-solid fa-star"></i>
+                    </button>
+
+                    <button type="button" data-rating="4">
+                        <i class="fa-solid fa-star"></i>
+                    </button>
+
+                    <button type="button" data-rating="5">
+                        <i class="fa-solid fa-star"></i>
+                    </button>
+
+                    <span id="selectedRatingText">
+                        Select a rating
+                    </span>
+
+                </div>
+
+                <input
+                    type="hidden"
+                    id="reviewRating"
+                    value="0">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="reviewTitle">
+                    Review Title
+                </label>
+
+                <input
+                    type="text"
+                    id="reviewTitle"
+                    maxlength="80"
+                    placeholder="Example: An unforgettable beach experience"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <div class="form-label-row">
+
+                    <label for="reviewDescription">
+                        Your Experience
+                    </label>
+
+                    <span id="reviewDescriptionCounter">
+                        0/600
+                    </span>
+
+                </div>
+
+                <textarea
+                    id="reviewDescription"
+                    maxlength="600"
+                    rows="6"
+                    placeholder="Tell travelers about the destination, accommodation, food, transport and your overall experience..."
+                    required></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="reviewImage">
+                    Upload Photo
+                    <span>Optional</span>
+                </label>
+
+                <div class="review-upload-box">
+
+                    <input
+                        type="file"
+                        id="reviewImage"
+                        accept="image/*">
+
+                    <div class="upload-placeholder" id="reviewUploadPlaceholder">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <h4>Upload a travel photo</h4>
+
+                        <p>JPG, PNG or WEBP</p>
+
+                    </div>
+
+                    <img
+                        id="reviewImagePreview"
+                        alt="Review Preview">
+
+                </div>
+
+                <button
+                    type="button"
+                    id="removeReviewImageBtn"
+                    class="remove-image-btn">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Remove Photo
+
+                </button>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="cancel-review-btn"
+                    id="cancelReviewBtn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="submit-review-btn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Publish Review
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <a href="index.html" class="footer-logo">
+
+                <i class="fa-solid fa-earth-americas"></i>
+
+                TravelVerse
+
+            </a>
+
+            <p>
+                Explore destinations, share experiences and connect with travelers.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="home.html">Home</a>
+
+            <a href="places.html">Tourist Spots</a>
+
+            <a href="reviews.html">Traveler Reviews</a>
+
+            <a href="index.html#about">About</a>
+
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 TravelVerse. All rights reserved.
+    </p>
+
+</footer>
+
+
+<script src="/js/theme.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/reviews.js"></script>
+
+</body>
+
+</html>
