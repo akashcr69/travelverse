@@ -3,23 +3,37 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>TravelVerse | Places</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/css/places.css">
-<link rel="stylesheet" href="/css/theme.css">
+    <title>TravelVerse | Explore Bangladesh</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+    <!-- Places Page CSS -->
 
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/places.css">
+
+
+    <!-- Global Theme CSS -->
+
+    <link rel="stylesheet" href="/css/theme.css">
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
@@ -31,11 +45,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <header>
 
-    <div class="logo">
+    <a href="index.html" class="logo">
 
-        🌍 TravelVerse
+        <i class="fa-solid fa-earth-americas"></i>
 
-    </div>
+        TravelVerse
+
+    </a>
 
 
     <nav>
@@ -44,37 +60,45 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             Home
         </a>
 
+
         <a href="upload.html">
             Create Post
         </a>
+
 
         <a href="places.html" class="active">
             Places
         </a>
 
+
         <a href="reviews.html">
             Reviews
         </a>
+
 
         <a href="profile.html">
             Profile
         </a>
 
+
         <a href="notifications.html">
             Notifications
         </a>
+
 
         <a href="saved.html">
             Saved
         </a>
 
+
         <a href="settings.html">
             Settings
         </a>
 
+
         <a
-        href="login.html"
-        onclick="logoutUser(event)">
+            href="login.html"
+            onclick="logoutUser(event)">
 
             Logout
 
@@ -90,62 +114,150 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <section class="hero">
 
+    <span class="hero-badge">
+
+        <i class="fa-solid fa-map-location-dot"></i>
+
+        Explore All 8 Divisions
+
+    </span>
+
+
     <h1>
-        Explore Bangladesh
+        Discover Beautiful Bangladesh
     </h1>
 
+
     <p>
-        Find hotels, tourist spots and reviews from travelers.
+        Explore popular, viral and hidden tourist destinations,
+        compare nearby hotels and save your favourite places.
     </p>
 
 </section>
 
 
 
-<!-- ================= SEARCH ================= -->
+<!-- ================= SEARCH AND FILTERS ================= -->
 
-<section class="search-box">
+<section class="search-box dynamic-places-filter">
+
+
+    <!-- SEARCH -->
 
     <input
-    type="text"
-    id="searchPlace"
-    placeholder="Search Tourist Place...">
+        type="text"
+        id="searchPlace"
+        placeholder="Search place, district or division..."
+        autocomplete="off">
 
+
+    <!-- CATEGORY FILTER -->
 
     <select id="category">
 
         <option value="all">
-            All
-        </option>
-
-        <option value="Beach">
-            Beach
-        </option>
-
-        <option value="Hill">
-            Hill
-        </option>
-
-        <option value="Forest">
-            Forest
-        </option>
-
-        <option value="Island">
-            Island
-        </option>
-
-        <option value="Lake">
-            Lake
+            All Categories
         </option>
 
     </select>
 
 
-    <button
-    type="button"
-    onclick="searchPlace()">
+    <!-- DIVISION FILTER -->
 
-        <i class="fa-solid fa-search"></i>
+    <select id="divisionFilter">
+
+        <option value="all">
+            All Divisions
+        </option>
+
+        <option value="Dhaka">
+            Dhaka
+        </option>
+
+        <option value="Chattogram">
+            Chattogram
+        </option>
+
+        <option value="Sylhet">
+            Sylhet
+        </option>
+
+        <option value="Khulna">
+            Khulna
+        </option>
+
+        <option value="Rajshahi">
+            Rajshahi
+        </option>
+
+        <option value="Rangpur">
+            Rangpur
+        </option>
+
+        <option value="Barishal">
+            Barishal
+        </option>
+
+        <option value="Mymensingh">
+            Mymensingh
+        </option>
+
+    </select>
+
+
+    <!-- POPULARITY FILTER -->
+
+    <select id="popularityFilter">
+
+        <option value="all">
+            All Places
+        </option>
+
+        <option value="viral">
+            Viral Places
+        </option>
+
+        <option value="popular">
+            Popular Places
+        </option>
+
+        <option value="hidden">
+            Hidden Gems
+        </option>
+
+    </select>
+
+
+    <!-- SORT FILTER -->
+
+    <select id="placeSort">
+
+        <option value="recommended">
+            Recommended
+        </option>
+
+        <option value="rating-high">
+            Highest Rated
+        </option>
+
+        <option value="name-az">
+            Name A–Z
+        </option>
+
+        <option value="division-az">
+            Division A–Z
+        </option>
+
+    </select>
+
+
+    <!-- SEARCH BUTTON -->
+
+    <button
+        type="button"
+        onclick="searchPlace()">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
 
         Search
 
@@ -155,405 +267,96 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-<!-- ================= PLACES ================= -->
+<!-- ================= RESULT INFORMATION ================= -->
 
-<section class="places" id="placesContainer">
+<section
+    class="places-result-bar"
+    id="placesResultBar">
 
+    <div>
 
-<!-- ================= COX'S BAZAR ================= -->
-
-<div
-class="card"
-data-category="Beach"
-data-destination="cox-bazar">
-
-    <img
-    src="/assets/longest-sea-beach-in.jpg"
-    alt="Cox's Bazar Sea Beach">
-
-
-    <div class="content">
-
-        <h2>
-            Cox's Bazar
-        </h2>
-
-        <p>
-            World's Longest Sea Beach
-        </p>
+        <strong id="visiblePlacesCount">
+            0
+        </strong>
 
         <span>
-            ⭐ 4.9
+            places showing
         </span>
 
-
-        <div class="card-actions">
-
-            <a href="hotels.html?destination=cox-bazar">
-
-                <button type="button">
-
-                    <i class="fa-solid fa-hotel"></i>
-
-                    View Hotels
-
-                </button>
-
-            </a>
-
-
-            <button
-            type="button"
-            class="save-place-btn"
-            onclick="savePlace(this)"
-            data-id="cox-bazar"
-            data-name="Cox's Bazar"
-            data-location="Chattogram"
-            data-rating="4.9"
-            data-image="/assets/longest-sea-beach-in.jpg">
-
-                <i class="fa-solid fa-bookmark"></i>
-
-                Save
-
-            </button>
-
-        </div>
-
     </div>
+
+
+    <p id="totalPlacesText">
+
+        Explore destinations across all 8 divisions.
+
+    </p>
+
+</section>
+
+
+
+<!-- ================= DYNAMIC PLACES ================= -->
+
+<section
+    class="places"
+    id="placesContainer">
+
+    <!--
+        places.js automatically all tourist-place cards
+        এই container-এর ভিতরে তৈরি করবে।
+    -->
+
+</section>
+
+
+
+<!-- ================= LOAD MORE ================= -->
+
+<div
+    class="load-more-places-wrap"
+    id="loadMorePlacesWrap">
+
+    <button
+        type="button"
+        class="load-more-places-btn"
+        id="loadMorePlacesBtn">
+
+        <i class="fa-solid fa-plus"></i>
+
+        Load More Places
+
+    </button>
 
 </div>
 
 
 
-<!-- ================= SAJEK VALLEY ================= -->
+<!-- ================= PAGE INFORMATION ================= -->
 
-<div
-class="card"
-data-category="Hill"
-data-destination="sajek-valley">
+<section class="places-info-section">
 
-    <img
-    src="/assets/images.jpeg"
-    alt="Sajek Valley">
+    <div class="places-info-icon">
 
-
-    <div class="content">
-
-        <h2>
-            Sajek Valley
-        </h2>
-
-        <p>
-            Cloud Kingdom of Bangladesh
-        </p>
-
-        <span>
-            ⭐ 4.8
-        </span>
-
-
-        <div class="card-actions">
-
-            <a href="hotels.html?destination=sajek-valley">
-
-                <button type="button">
-
-                    <i class="fa-solid fa-hotel"></i>
-
-                    View Hotels
-
-                </button>
-
-            </a>
-
-
-            <button
-            type="button"
-            class="save-place-btn"
-            onclick="savePlace(this)"
-            data-id="sajek-valley"
-            data-name="Sajek Valley"
-            data-location="Rangamati"
-            data-rating="4.8"
-            data-image="/assets/images.jpeg">
-
-                <i class="fa-solid fa-bookmark"></i>
-
-                Save
-
-            </button>
-
-        </div>
+        <i class="fa-solid fa-circle-info"></i>
 
     </div>
 
-</div>
 
+    <div>
 
+        <h3>
+            TravelVerse Destination Guide
+        </h3>
 
-<!-- ================= SUNDARBANS ================= -->
-
-<div
-class="card"
-data-category="Forest"
-data-destination="sundarbans">
-
-    <img
-    src="/assets/922_giant.jpg"
-    alt="Sundarbans Mangrove Forest">
-
-
-    <div class="content">
-
-        <h2>
-            Sundarbans
-        </h2>
 
         <p>
-            Largest Mangrove Forest
+            Search destinations by name, district, division or category.
+            Select “View Hotels” to explore accommodation options near a
+            destination.
         </p>
 
-        <span>
-            ⭐ 4.9
-        </span>
-
-
-        <div class="card-actions">
-
-            <a href="hotels.html?destination=sundarbans">
-
-                <button type="button">
-
-                    <i class="fa-solid fa-hotel"></i>
-
-                    View Hotels
-
-                </button>
-
-            </a>
-
-
-            <button
-            type="button"
-            class="save-place-btn"
-            onclick="savePlace(this)"
-            data-id="sundarbans"
-            data-name="Sundarbans"
-            data-location="Khulna"
-            data-rating="4.9"
-            data-image="/assets/922_giant.jpg">
-
-                <i class="fa-solid fa-bookmark"></i>
-
-                Save
-
-            </button>
-
-        </div>
-
     </div>
-
-</div>
-
-
-
-<!-- ================= SAINT MARTIN ================= -->
-
-<div
-class="card"
-data-category="Island"
-data-destination="saint-martin">
-
-    <img
-    src="/assets/image-299881-1754634544.jpg"
-    alt="Saint Martin Island">
-
-
-    <div class="content">
-
-        <h2>
-            Saint Martin
-        </h2>
-
-        <p>
-            Beautiful Coral Island
-        </p>
-
-        <span>
-            ⭐ 5.0
-        </span>
-
-
-        <div class="card-actions">
-
-            <a href="hotels.html?destination=saint-martin">
-
-                <button type="button">
-
-                    <i class="fa-solid fa-hotel"></i>
-
-                    View Hotels
-
-                </button>
-
-            </a>
-
-
-            <button
-            type="button"
-            class="save-place-btn"
-            onclick="savePlace(this)"
-            data-id="saint-martin"
-            data-name="Saint Martin"
-            data-location="Cox's Bazar"
-            data-rating="5.0"
-            data-image="/assets/image-299881-1754634544.jpg">
-
-                <i class="fa-solid fa-bookmark"></i>
-
-                Save
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- ================= BANDARBAN ================= -->
-
-<div
-class="card"
-data-category="Hill"
-data-destination="bandarban">
-
-    <img
-    src="/assets/a93a9706d01a595cf222de17a931d03e.jpg"
-    alt="Bandarban Hills">
-
-
-    <div class="content">
-
-        <h2>
-            Bandarban
-        </h2>
-
-        <p>
-            Adventure Destination
-        </p>
-
-        <span>
-            ⭐ 4.8
-        </span>
-
-
-        <div class="card-actions">
-
-            <a href="hotels.html?destination=bandarban">
-
-                <button type="button">
-
-                    <i class="fa-solid fa-hotel"></i>
-
-                    View Hotels
-
-                </button>
-
-            </a>
-
-
-            <button
-            type="button"
-            class="save-place-btn"
-            onclick="savePlace(this)"
-            data-id="bandarban"
-            data-name="Bandarban"
-            data-location="Chattogram Hill Tracts"
-            data-rating="4.8"
-            data-image="/assets/a93a9706d01a595cf222de17a931d03e.jpg">
-
-                <i class="fa-solid fa-bookmark"></i>
-
-                Save
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- ================= RANGAMATI ================= -->
-
-<div
-class="card"
-data-category="Lake"
-data-destination="rangamati">
-
-    <img
-    src="/assets/1525327366_1.jpg"
-    alt="Rangamati Kaptai Lake">
-
-
-    <div class="content">
-
-        <h2>
-            Rangamati
-        </h2>
-
-        <p>
-            Kaptai Lake
-        </p>
-
-        <span>
-            ⭐ 4.7
-        </span>
-
-
-        <div class="card-actions">
-
-            <a href="hotels.html?destination=rangamati">
-
-                <button type="button">
-
-                    <i class="fa-solid fa-hotel"></i>
-
-                    View Hotels
-
-                </button>
-
-            </a>
-
-
-            <button
-            type="button"
-            class="save-place-btn"
-            onclick="savePlace(this)"
-            data-id="rangamati"
-            data-name="Rangamati"
-            data-location="Chattogram Hill Tracts"
-            data-rating="4.7"
-            data-image="/assets/1525327366_1.jpg">
-
-                <i class="fa-solid fa-bookmark"></i>
-
-                Save
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
 
 </section>
 
@@ -562,6 +365,40 @@ data-destination="rangamati">
 <!-- ================= FOOTER ================= -->
 
 <footer>
+
+    <div class="footer-content">
+
+        <a href="index.html" class="footer-logo">
+
+            <i class="fa-solid fa-earth-americas"></i>
+
+            TravelVerse
+
+        </a>
+
+
+        <div class="footer-links">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="places.html">
+                Tourist Places
+            </a>
+
+            <a href="hotels.html">
+                Hotels
+            </a>
+
+            <a href="reviews.html">
+                Reviews
+            </a>
+
+        </div>
+
+    </div>
+
 
     <p>
         © 2026 TravelVerse | Explore • Review • Inspire

@@ -3,54 +3,143 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>TravelVerse | Home</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/css/home.css">
-<link rel="stylesheet" href="/css/theme.css">
+    <title>TravelVerse | Home</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Global Theme CSS -->
+
+    <link rel="stylesheet" href="/css/theme.css">
+
+
+    <!-- Home Page CSS -->
+
+    <link rel="stylesheet" href="/css/home.css">
+
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
+
 <body>
 
-<!-- Navbar -->
+
+<!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
 
-    <div class="logo">
+
+    <!-- LOGO -->
+
+    <a href="home.html" class="logo">
+
         <i class="fa-solid fa-earth-americas"></i>
-        TravelVerse
-    </div>
+
+        <span>
+            TravelVerse
+        </span>
+
+    </a>
+
+
+
+    <!-- SEARCH -->
 
     <div class="search">
-        <i class="fa-solid fa-search"></i>
-        <input type="text" placeholder="Search places...">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="homeSearchInput"
+            placeholder="Search places..."
+            autocomplete="off">
+
     </div>
+
+
+
+    <!-- NAVBAR ACTIONS -->
 
     <div class="nav-icons">
 
-        <a href="notifications.html" class="notification-link" title="Notifications">
+
+        <!-- NOTIFICATIONS -->
+
+        <a
+            href="notifications.html"
+            id="homeNotificationLink"
+            class="notification-link login-required-link"
+            title="Notifications">
+
             <i class="fa-solid fa-bell"></i>
-            <span id="notificationBadge" class="notification-badge">0</span>
+
+            <span
+                id="notificationBadge"
+                class="notification-badge">
+
+                0
+
+            </span>
+
         </a>
 
-        <a href="profile.html" title="Profile">
+
+
+        <!-- PROFILE -->
+
+        <a
+            href="profile.html"
+            id="homeProfileLink"
+            class="login-required-link"
+            title="Profile">
+
             <i class="fa-solid fa-user"></i>
+
         </a>
 
-        <a href="settings.html" title="Settings">
+
+
+        <!-- SETTINGS -->
+
+        <a
+            href="settings.html"
+            id="homeSettingsLink"
+            class="login-required-link"
+            title="Settings">
+
             <i class="fa-solid fa-gear"></i>
+
         </a>
 
-        <button onclick="logout()">
+
+
+        <!-- LOGOUT -->
+
+        <button
+            type="button"
+            id="homeLogoutBtn"
+            onclick="logout()">
+
             Logout
+
         </button>
 
     </div>
@@ -58,155 +147,466 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 </header>
 
 
+
+<!-- ================= MAIN LAYOUT ================= -->
+
 <div class="main">
 
-    <!-- Sidebar -->
 
-    <aside class="sidebar">
+<!-- ================= LEFT SIDEBAR ================= -->
 
-        <div class="profile-mini">
+<aside class="sidebar">
 
-            <img 
+
+    <!-- LOGGED-IN USER PROFILE -->
+
+    <div
+        class="profile-mini"
+        id="loggedInSidebarProfile">
+
+        <img
             id="sidebarProfileImage"
-            src="assets/WhatsApp Image 2026-07-13 at 03.10.00.jpeg"
-            alt="Profile">
+            src="/assets/images/user1.jpg"
+            alt="Profile photo"
+            onerror="this.onerror=null; this.src='/assets/images/user1.jpg';">
 
-            <h3 id="sidebarProfileName">Partho Singh</h3>
 
-            <p id="sidebarProfileUsername">@partho_singh</p>
+        <h3 id="sidebarProfileName">
+
+            Traveler
+
+        </h3>
+
+
+        <p id="sidebarProfileUsername">
+
+            @traveler
+
+        </p>
+
+    </div>
+
+
+
+    <!-- GUEST WELCOME CARD -->
+
+    <div
+        class="guest-welcome-card"
+        id="guestSidebarCard"
+        hidden>
+
+        <div class="guest-welcome-icon">
+
+            <i class="fa-solid fa-compass"></i>
 
         </div>
 
-        <ul>
 
-            <li>
-                <a href="home.html">
-                    <i class="fa-solid fa-house"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="upload.html">
-                    <i class="fa-solid fa-camera"></i>
-                    <span>Create Post</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="places.html">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Explore Places</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="profile.html">
-                    <i class="fa-solid fa-user"></i>
-                    <span>Profile</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="saved.html">
-                    <i class="fa-solid fa-bookmark"></i>
-                    <span>Saved</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="settings.html">
-                    <i class="fa-solid fa-gear"></i>
-                    <span>Settings</span>
-                </a>
-            </li>
-
-        </ul>
-
-    </aside>
+        <h3>
+            Welcome, Traveler!
+        </h3>
 
 
-    <!-- Feed -->
+        <p>
+            Sign in to share travel stories, save places and connect
+            with other travelers.
+        </p>
 
-    <section class="feed">
 
-        <div class="create-post">
+        <div class="guest-auth-buttons">
 
-            <input 
+            <a
+                href="login.html"
+                class="guest-login-btn">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login
+
+            </a>
+
+
+            <a
+                href="register.html"
+                class="guest-register-btn">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Create Account
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SIDEBAR MENU -->
+
+    <ul>
+
+
+        <!-- HOME -->
+
+        <li class="active">
+
+            <a href="home.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- CREATE POST -->
+
+        <li>
+
+            <a
+                href="upload.html"
+                class="login-required-link">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <span>
+                    Create Post
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- EXPLORE PLACES -->
+
+        <li>
+
+            <a href="places.html">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>
+                    Explore Places
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- REVIEWS -->
+
+        <li>
+
+            <a href="reviews.html">
+
+                <i class="fa-solid fa-star"></i>
+
+                <span>
+                    Reviews
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- PROFILE -->
+
+        <li>
+
+            <a
+                href="profile.html"
+                class="login-required-link">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- NOTIFICATIONS -->
+
+        <li>
+
+            <a
+                href="notifications.html"
+                class="login-required-link">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <span>
+                    Notifications
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- SAVED -->
+
+        <li>
+
+            <a
+                href="saved.html"
+                class="login-required-link">
+
+                <i class="fa-solid fa-bookmark"></i>
+
+                <span>
+                    Saved
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- SETTINGS -->
+
+        <li>
+
+            <a
+                href="settings.html"
+                class="login-required-link">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </li>
+
+
+    </ul>
+
+</aside>
+
+
+
+<!-- ================= HOME FEED ================= -->
+
+<section class="feed">
+
+
+    <!-- CREATE POST BOX -->
+
+    <div
+        class="create-post"
+        id="homeCreatePostBox">
+
+        <input
             type="text"
             id="postText"
-            placeholder="Share your travel story...">
+            placeholder="Share your travel story..."
+            autocomplete="off">
 
-            <button onclick="createPost()">
-                Post
-            </button>
+
+        <button
+            type="button"
+            id="homeCreatePostBtn"
+            onclick="createPost()">
+
+            Post
+
+        </button>
+
+    </div>
+
+
+
+    <!-- DYNAMIC POSTS -->
+
+    <div id="postContainer">
+
+        <!-- Posts will load from home.js -->
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= RIGHT SIDEBAR ================= -->
+
+<aside class="rightbar">
+
+
+    <!-- TRENDING PLACES -->
+
+    <h2>
+        Trending Places
+    </h2>
+
+
+
+    <a
+        href="hotels.html?destination=sajek-valley"
+        class="trend-card">
+
+        <img
+            src="/assets/images.jpeg"
+            alt="Sajek Valley">
+
+        <h4>
+            Sajek Valley
+        </h4>
+
+    </a>
+
+
+
+    <a
+        href="hotels.html?destination=sundarbans"
+        class="trend-card">
+
+        <img
+            src="/assets/922_giant.jpg"
+            alt="Sundarbans">
+
+        <h4>
+            Sundarbans
+        </h4>
+
+    </a>
+
+
+
+    <a
+        href="hotels.html?destination=saint-martin"
+        class="trend-card">
+
+        <img
+            src="/assets/image-299881-1754634544.jpg"
+            alt="Saint Martin">
+
+        <h4>
+            Saint Martin
+        </h4>
+
+    </a>
+
+
+
+    <!-- SAVED COLLECTION WIDGET -->
+
+    <div
+        class="home-saved-widget"
+        id="homeSavedWidget">
+
+
+        <div class="saved-widget-head">
+
+            <h2>
+                Saved Collection
+            </h2>
+
+
+            <a
+                href="saved.html"
+                class="login-required-link">
+
+                View All
+
+            </a>
 
         </div>
 
-        <!-- Dynamic posts will load here from home.js -->
-        <div id="postContainer"></div>
-
-    </section>
 
 
-    <!-- Right Sidebar -->
-
-    <aside class="rightbar">
-
-        <h2>Trending Places</h2>
-
-        <div class="trend-card">
-            <img src="/assets/images.jpeg" alt="Sajek Valley">
-            <h4>Sajek Valley</h4>
-        </div>
-
-        <div class="trend-card">
-            <img src="/assets/922_giant.jpg" alt="Sundarbans">
-            <h4>Sundarbans</h4>
-        </div>
-
-        <div class="trend-card">
-            <img src="/assets/image-299881-1754634544.jpg" alt="Saint Martin">
-            <h4>Saint Martin</h4>
-        </div>
+        <div class="saved-widget-counts">
 
 
-        <!-- Home Saved Collection Widget -->
+            <!-- SAVED PLACES COUNT -->
 
-        <div class="home-saved-widget">
+            <div>
 
-            <div class="saved-widget-head">
-                <h2>Saved Collection</h2>
-                <a href="saved.html">View All</a>
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span id="homeSavedPlacesCount">
+
+                    0
+
+                </span>
+
+                <p>
+                    Places
+                </p>
+
             </div>
 
-            <div class="saved-widget-counts">
 
-                <div>
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span id="homeSavedPlacesCount">0</span>
-                    <p>Places</p>
-                </div>
 
-                <div>
-                    <i class="fa-solid fa-hotel"></i>
-                    <span id="homeSavedHotelsCount">0</span>
-                    <p>Hotels</p>
-                </div>
+            <!-- SAVED HOTELS COUNT -->
+
+            <div>
+
+                <i class="fa-solid fa-hotel"></i>
+
+                <span id="homeSavedHotelsCount">
+
+                    0
+
+                </span>
+
+                <p>
+                    Hotels
+                </p>
 
             </div>
 
-            <div id="homeSavedList" class="home-saved-list"></div>
 
         </div>
 
-    </aside>
+
+
+        <!-- SAVED PREVIEW LIST -->
+
+        <div
+            id="homeSavedList"
+            class="home-saved-list">
+
+        </div>
+
+    </div>
+
+</aside>
+
 
 </div>
 
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script src="/js/theme.js"></script>
+
 <script src="/js/auth.js"></script>
+
 <script src="/js/home.js"></script>
+
 
 </body>
 

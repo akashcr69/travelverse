@@ -3,269 +3,811 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>TravelVerse | Profile</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/css/profile.css">
-<link rel="stylesheet" href="/css/theme.css">
+    <title>TravelVerse | Profile</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- GLOBAL THEME CSS -->
+
+    <link rel="stylesheet" href="/css/theme.css">
+
+
+    <!-- PROFILE PAGE CSS -->
+
+    <link rel="stylesheet" href="/css/profile.css">
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
+
 <body>
+
+
+<!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
 
-    <div class="logo">
+
+    <a href="home.html" class="logo">
+
         <i class="fa-solid fa-earth-americas"></i>
+
         TravelVerse
-    </div>
+
+    </a>
+
 
     <div class="nav-links">
 
-        <a href="home.html">Home</a>
+        <a href="home.html">
+            Home
+        </a>
 
-        <a href="upload.html">Create Post</a>
+        <a href="upload.html">
+            Create Post
+        </a>
 
-        <a href="places.html">Places</a>
+        <a href="places.html">
+            Places
+        </a>
 
-        <a href="saved.html">Saved</a>
+        <a href="saved.html">
+            Saved
+        </a>
 
-        <a href="notifications.html">Notifications</a>
+        <a href="notifications.html">
+            Notifications
+        </a>
 
-        <a href="settings.html">Settings</a>
+        <a href="settings.html">
+            Settings
+        </a>
 
-        <a href="profile.html" class="active">Profile</a>
+        <a href="profile.html" class="active">
+            Profile
+        </a>
 
     </div>
 
-    <button class="logout-btn" onclick="logout()">Logout</button>
+
+    <button
+        type="button"
+        class="logout-btn"
+        onclick="logout()">
+
+        Logout
+
+    </button>
 
 </header>
 
 
+
+<!-- ================= PROFILE PAGE ================= -->
+
 <main class="profile-page">
 
-    <!-- COVER AREA -->
+
+    <!-- ================= PROFILE HERO ================= -->
 
     <section class="profile-hero">
 
-        <div class="cover-photo" id="coverPreview">
 
-            <label for="coverImageInput" class="edit-cover-btn">
+        <!-- COVER PHOTO -->
+
+        <div
+            class="cover-photo"
+            id="coverPreview">
+
+
+            <!-- REAL BUTTON -->
+
+            <button
+                type="button"
+                class="edit-cover-btn"
+                id="editCoverBtn">
+
                 <i class="fa-solid fa-camera"></i>
-                Edit Cover
-            </label>
 
-            <input type="file" id="coverImageInput" accept="image/*" hidden>
+                Edit Cover
+
+            </button>
 
         </div>
 
 
-        <!-- PROFILE PHOTO OVERLAP -->
+        <!-- COVER FILE INPUT -->
+
+        <input
+            type="file"
+            id="coverImageInput"
+            accept="image/jpeg,image/png,image/webp"
+            hidden>
+
+
+
+        <!-- ================= PROFILE PHOTO ================= -->
 
         <div class="profile-photo-wrap">
 
+
             <div class="profile-photo">
-                <img id="profilePreview" alt="Profile Photo">
+
+                <img
+                    id="profilePreview"
+                    src="/assets/images/user1.jpg"
+                    alt="Profile Photo"
+                    onerror="this.onerror=null; this.src='/assets/images/user1.jpg';">
+
             </div>
 
-            <label for="profileImageInput" class="change-photo-btn">
-                <i class="fa-solid fa-camera"></i>
-                Change Photo
-            </label>
 
-            <input type="file" id="profileImageInput" accept="image/*" hidden>
+            <!-- REAL BUTTON -->
+
+            <button
+                type="button"
+                class="change-photo-btn"
+                id="changeProfilePhotoBtn">
+
+                <i class="fa-solid fa-camera"></i>
+
+                Change Photo
+
+            </button>
 
         </div>
 
 
-        <!-- PROFILE BASIC INFO -->
+        <!-- PROFILE FILE INPUT -->
+
+        <input
+            type="file"
+            id="profileImageInput"
+            accept="image/jpeg,image/png,image/webp"
+            hidden>
+
+
+
+        <!-- ================= PROFILE BASIC INFO ================= -->
 
         <div class="profile-basic">
 
             <h1>
-                <span id="displayName">Akash Ahmed</span>
+
+                <span id="displayName">
+                    Akash Ahmed
+                </span>
+
                 <i class="fa-solid fa-circle-check verified"></i>
+
             </h1>
 
-            <p id="displayBio">Travel Enthusiast | Rajshahi</p>
+
+            <p id="displayBio">
+
+                Travel Enthusiast | Rajshahi
+
+            </p>
 
         </div>
+
 
     </section>
 
 
-    <!-- PROFILE TABS -->
+
+    <!-- ================= PROFILE TABS ================= -->
 
     <section class="profile-tabs">
 
-        <button class="tab-btn active" data-tab="posts">Posts</button>
 
-        <button class="tab-btn" data-tab="reviews">Reviews</button>
+        <button
+            type="button"
+            class="tab-btn active"
+            data-tab="posts">
 
-        <button class="tab-btn" data-tab="photos">Photos</button>
+            Posts
 
-        <button class="tab-btn" data-tab="saved">Saved</button>
+        </button>
 
-        <button class="tab-btn" data-tab="hotels">Hotels</button>
+
+        <button
+            type="button"
+            class="tab-btn"
+            data-tab="reviews">
+
+            Reviews
+
+        </button>
+
+
+        <button
+            type="button"
+            class="tab-btn"
+            data-tab="photos">
+
+            Photos
+
+        </button>
+
+
+        <button
+            type="button"
+            class="tab-btn"
+            data-tab="saved">
+
+            Saved
+
+        </button>
+
+
+        <button
+            type="button"
+            class="tab-btn"
+            data-tab="hotels">
+
+            Hotels
+
+        </button>
+
 
     </section>
 
 
-    <!-- ABOUT ME -->
+
+    <!-- ================= ABOUT ME ================= -->
 
     <section class="profile-card about-card">
 
-        <div class="section-head">
-            <h2>About Me</h2>
 
-            <button id="openEditBtn">
+        <div class="section-head">
+
+            <h2>
+                About Me
+            </h2>
+
+
+            <button
+                type="button"
+                id="openEditBtn">
+
                 <i class="fa-solid fa-pen"></i>
+
                 Edit
+
             </button>
+
         </div>
+
 
         <div class="about-list">
 
+
             <div>
+
                 <i class="fa-solid fa-location-dot"></i>
-                Lives in <span id="displayLocation">Rajshahi</span>
+
+                Lives in
+
+                <span id="displayLocation">
+                    Rajshahi
+                </span>
+
             </div>
 
+
             <div>
+
                 <i class="fa-solid fa-calendar"></i>
-                Joined <span id="displayJoined">July 2026</span>
+
+                Joined
+
+                <span id="displayJoined">
+                    July 2026
+                </span>
+
             </div>
 
+
             <div>
+
                 <i class="fa-solid fa-map-location-dot"></i>
-                Visited <span id="displayVisited">35</span> Places
+
+                Visited
+
+                <span id="displayVisited">
+                    35
+                </span>
+
+                Places
+
             </div>
 
+
             <div>
+
                 <i class="fa-solid fa-hotel"></i>
-                Reviewed <span id="displayReviewed">20</span> Hotels
+
+                Reviewed
+
+                <span id="displayReviewed">
+                    20
+                </span>
+
+                Hotels
+
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- EDIT PROFILE FORM -->
 
-    <section class="profile-card edit-card" id="editProfileBox">
+    <!-- ================= EDIT PROFILE FORM ================= -->
 
-        <h2>Edit Profile</h2>
+    <section
+        class="profile-card edit-card"
+        id="editProfileBox">
+
+
+        <h2>
+            Edit Profile
+        </h2>
+
 
         <form id="profileForm">
 
+
             <div class="form-grid">
 
-                <div class="input-group">
-                    <label>Name</label>
-                    <input type="text" id="profileName" placeholder="Your Name">
-                </div>
 
                 <div class="input-group">
-                    <label>Username</label>
-                    <input type="text" id="profileUsername" placeholder="username">
+
+                    <label for="profileName">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="profileName"
+                        placeholder="Your Name">
+
                 </div>
 
-                <div class="input-group">
-                    <label>Location</label>
-                    <input type="text" id="profileLocation" placeholder="Your Location">
-                </div>
 
                 <div class="input-group">
-                    <label>Joined</label>
-                    <input type="text" id="profileJoined" placeholder="July 2026">
+
+                    <label for="profileUsername">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="profileUsername"
+                        placeholder="username">
+
                 </div>
 
-                <div class="input-group">
-                    <label>Visited Places</label>
-                    <input type="number" id="profileVisited" placeholder="35">
-                </div>
 
                 <div class="input-group">
-                    <label>Reviewed Hotels</label>
-                    <input type="number" id="profileReviewed" placeholder="20">
+
+                    <label for="profileLocation">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="profileLocation"
+                        placeholder="Your Location">
+
                 </div>
+
+
+                <div class="input-group">
+
+                    <label for="profileJoined">
+                        Joined
+                    </label>
+
+                    <input
+                        type="text"
+                        id="profileJoined"
+                        placeholder="July 2026">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="profileVisited">
+                        Visited Places
+                    </label>
+
+                    <input
+                        type="number"
+                        id="profileVisited"
+                        min="0"
+                        placeholder="35">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="profileReviewed">
+                        Reviewed Hotels
+                    </label>
+
+                    <input
+                        type="number"
+                        id="profileReviewed"
+                        min="0"
+                        placeholder="20">
+
+                </div>
+
 
             </div>
+
 
             <div class="input-group">
-                <label>Bio</label>
-                <textarea id="profileBio" placeholder="Travel Enthusiast | Rajshahi"></textarea>
+
+                <label for="profileBio">
+                    Bio
+                </label>
+
+                <textarea
+                    id="profileBio"
+                    placeholder="Travel Enthusiast | Rajshahi"></textarea>
+
             </div>
 
-            <button type="submit" class="save-btn">
+
+            <button
+                type="submit"
+                class="save-btn">
+
                 Save Profile
+
             </button>
+
 
         </form>
 
     </section>
 
 
-    <!-- TAB CONTENT -->
 
-    <section class="profile-card tab-content active" id="posts">
+    <!-- ================= POSTS TAB ================= -->
 
-        <h2>My Posts</h2>
-
-        <div id="myPosts" class="post-grid"></div>
-
-    </section>
+    <section
+        class="profile-card tab-content active"
+        id="posts">
 
 
-    <section class="profile-card tab-content" id="reviews">
-
-        <h2>My Reviews</h2>
-
-        <div id="myReviews" class="review-list"></div>
-
-    </section>
+        <h2>
+            My Posts
+        </h2>
 
 
-    <section class="profile-card tab-content" id="photos">
+        <div
+            id="myPosts"
+            class="post-grid">
 
-        <h2>My Photos</h2>
-
-        <div id="myPhotos" class="photo-grid"></div>
+        </div>
 
     </section>
 
 
-    <section class="profile-card tab-content" id="saved">
 
-        <h2>Saved Places</h2>
+    <!-- ================= REVIEWS TAB ================= -->
 
-        <div id="mySaved" class="saved-list"></div>
+    <section
+        class="profile-card tab-content"
+        id="reviews">
+
+
+        <h2>
+            My Reviews
+        </h2>
+
+
+        <div
+            id="myReviews"
+            class="review-list">
+
+        </div>
 
     </section>
 
 
-    <section class="profile-card tab-content" id="hotels">
 
-        <h2>Saved Hotels</h2>
+    <!-- ================= PHOTOS TAB ================= -->
 
-        <div id="myHotels" class="saved-list"></div>
+    <section
+        class="profile-card tab-content"
+        id="photos">
+
+
+        <h2>
+            My Photos
+        </h2>
+
+
+        <div
+            id="myPhotos"
+            class="photo-grid">
+
+        </div>
 
     </section>
+
+
+
+    <!-- ================= SAVED PLACES TAB ================= -->
+
+    <section
+        class="profile-card tab-content"
+        id="saved">
+
+
+        <h2>
+            Saved Places
+        </h2>
+
+
+        <div
+            id="mySaved"
+            class="saved-list">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SAVED HOTELS TAB ================= -->
+
+    <section
+        class="profile-card tab-content"
+        id="hotels">
+
+
+        <h2>
+            Saved Hotels
+        </h2>
+
+
+        <div
+            id="myHotels"
+            class="saved-list">
+
+        </div>
+
+    </section>
+
 
 </main>
 
 
+
+<!-- ================= IMAGE PREVIEW MODAL ================= -->
+
+<div
+    class="image-preview-modal"
+    id="imagePreviewModal"
+    aria-hidden="true">
+
+
+    <div class="image-preview-box">
+
+
+        <!-- CLOSE BUTTON -->
+
+        <button
+            type="button"
+            class="modal-close-btn"
+            id="closeImagePreviewModal"
+            aria-label="Close preview">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+
+        <!-- MODAL HEADING -->
+
+        <div class="image-preview-header">
+
+
+            <div class="preview-icon">
+
+                <i class="fa-solid fa-image"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2 id="previewModalTitle">
+
+                    Preview Image
+
+                </h2>
+
+
+                <p>
+                    Save করার আগে দেখে নাও profile-এ কেমন দেখাবে।
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- IMAGE TYPE -->
+
+        <input
+            type="hidden"
+            id="previewImageType"
+            value="">
+
+
+
+        <!-- SELECTED IMAGE PREVIEW -->
+
+        <div class="selected-image-preview">
+
+            <img
+                id="previewModalImage"
+                src="/assets/images/user1.jpg"
+                alt="Selected Preview">
+
+        </div>
+
+
+
+        <!-- ================= LIVE PROFILE PREVIEW ================= -->
+
+        <div class="live-profile-preview-card">
+
+
+            <h3>
+                Live Preview
+            </h3>
+
+
+            <div class="mini-profile-preview">
+
+
+                <!-- MINI COVER -->
+
+                <div
+                    class="mini-cover-preview"
+                    id="miniCoverPreview">
+
+                </div>
+
+
+
+                <!-- MINI PROFILE IMAGE -->
+
+                <div class="mini-profile-preview-image-wrap">
+
+                    <img
+                        id="miniProfilePreviewImage"
+                        src="/assets/images/user1.jpg"
+                        alt="Mini Profile">
+
+                </div>
+
+
+
+                <!-- MINI PROFILE INFO -->
+
+                <div class="mini-profile-preview-info">
+
+                    <h4 id="miniPreviewName">
+
+                        Akash Ahmed
+
+                    </h4>
+
+
+                    <p id="miniPreviewBio">
+
+                        Travel Enthusiast | Rajshahi
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= MODAL ACTIONS ================= -->
+
+        <div class="image-preview-actions">
+
+
+            <button
+                type="button"
+                class="choose-another-btn"
+                id="chooseAnotherImageBtn">
+
+                <i class="fa-solid fa-arrows-rotate"></i>
+
+                Choose Another
+
+            </button>
+
+
+            <button
+                type="button"
+                class="cancel-preview-btn"
+                id="cancelImagePreviewBtn">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="save-preview-btn"
+                id="saveImagePreviewBtn">
+
+                <i class="fa-solid fa-check"></i>
+
+                Save Changes
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script src="/js/theme.js"></script>
-<script src="/js/profile.js"></script>
+
+<script src="/js/profile.js?v=20260717-4"></script>
+
 
 </body>
 

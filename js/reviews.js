@@ -10,6 +10,10 @@
 
 const REVIEWS_STORAGE_KEY = "travelverse_reviews";
 
+const GUEST_REVIEWER_ID_KEY = "travelverse_guest_reviewer_id";
+
+const GUEST_REVIEWER_NAME_KEY = "travelverse_guest_reviewer_name";
+
 const DEFAULT_PROFILE_IMAGE =
     "assets/WhatsApp Image 2026-07-13 at 03.10.00.jpeg";
 
@@ -187,6 +191,53 @@ function safeReviewParse(key, fallback) {
         return fallback;
 
     }
+
+}
+
+
+// ===============================
+// Guest Reviewer Identity
+// Allows guest ownership on this browser
+// ===============================
+
+function getGuestReviewerId() {
+
+    let guestId =
+        localStorage.getItem(
+            GUEST_REVIEWER_ID_KEY
+        );
+
+    if (!guestId) {
+
+        if (
+            window.crypto &&
+            typeof window.crypto.randomUUID === "function"
+        ) {
+
+            guestId =
+                "guest_" +
+                window.crypto.randomUUID();
+
+        } else {
+
+            guestId =
+                "guest_" +
+                Date.now() +
+                "_" +
+                Math.random()
+                    .toString(36)
+                    .slice(2, 10);
+
+        }
+
+        localStorage.setItem(
+            GUEST_REVIEWER_ID_KEY,
+            guestId
+        );
+
+    }
+
+    return guestId;
 
 }
 
@@ -370,18 +421,39 @@ function saveReviews(reviews) {
 
 function isReviewOwner(review) {
 
+    if (!review) {
+
+        return false;
+
+    }
+
+    if (review.isGuest) {
+
+        const guestOwnerId =
+            getGuestReviewerId();
+
+        return Boolean(
+            review.guestOwnerId &&
+            String(review.guestOwnerId) ===
+            String(guestOwnerId)
+        );
+
+    }
+
     if (!reviewUserIsLoggedIn()) {
 
         return false;
 
     }
 
-    const currentUser = getReviewCurrentUser();
+    const currentUser =
+        getReviewCurrentUser();
 
     const sameUserId =
         review.userId &&
         currentUser.id &&
-        String(review.userId) === String(currentUser.id);
+        String(review.userId) ===
+        String(currentUser.id);
 
     const sameEmail =
         review.userEmail &&
@@ -389,7 +461,10 @@ function isReviewOwner(review) {
         String(review.userEmail).toLowerCase() ===
         String(currentUser.email).toLowerCase();
 
-    return Boolean(sameUserId || sameEmail);
+    return Boolean(
+        sameUserId ||
+        sameEmail
+    );
 
 }
 
@@ -422,6 +497,52 @@ function formatReviewDate(dateValue) {
             year: "numeric"
         }
     ).format(date);
+
+}
+
+
+function formatReviewDateTime(dateValue) {
+
+    if (!dateValue) {
+
+        return "Date and time unavailable";
+
+    }
+
+    const date =
+        new Date(dateValue);
+
+    if (Number.isNaN(date.getTime())) {
+
+        return escapeReviewHTML(dateValue);
+
+    }
+
+    const dateText =
+        new Intl.DateTimeFormat(
+            "en-GB",
+            {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            }
+        ).format(date);
+
+    const timeText =
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                hour: "numeric",
+                minute: "2-digit",
+                hour12: true
+            }
+        ).format(date);
+
+    return (
+        dateText +
+        " • " +
+        timeText
+    );
 
 }
 
@@ -492,6 +613,8 @@ function getFilteredReviews() {
             review.destination,
 
             review.userName,
+
+            review.userUsername,
 
             review.title,
 
@@ -641,6 +764,22 @@ function renderReviews() {
             helpfulUsers.includes(currentUserKey);
 
 
+        const reviewerLabel =
+            review.isGuest
+                ? "Guest Traveler"
+                : (
+                    review.userUsername
+                        ? (
+                            String(
+                                review.userUsername
+                            ).startsWith("@")
+                                ? review.userUsername
+                                : "@" + review.userUsername
+                        )
+                        : "Traveler"
+                );
+
+
         const verifiedBadge = review.verified ? `
 
             <span class="verified-badge">
@@ -722,12 +861,22 @@ function renderReviews() {
 
                         <div class="review-user-meta">
 
+                            <span class="reviewer-label">
+
+                                ${escapeReviewHTML(
+                                    reviewerLabel
+                                )}
+
+                            </span>
+
                             ${verifiedBadge}
 
-                            <span>
+                            <span class="review-posted-time">
+
+                                <i class="fa-regular fa-clock"></i>
 
                                 Posted
-                                ${formatReviewDate(
+                                ${formatReviewDateTime(
                                     review.createdAt
                                 )}
 
@@ -1026,19 +1175,61 @@ function updateRatingBreakdown(
 
 
 // ===============================
-// Open Review Modal
+// Reviewer Identity Form
 // ===============================
 
-function openReviewModal(reviewId = null) {
+function updateReviewerIdentityFields() {
 
-    if (!requireReviewLogin(
-        "Please login to share your travel experience."
-    )) {
+    const guestGroup =
+        document.getElementById(
+            "guestReviewerGroup"
+        );
+
+    const guestNameInput =
+        document.getElementById(
+            "guestReviewerName"
+        );
+
+    if (!guestGroup || !guestNameInput) {
 
         return;
 
     }
 
+    const loggedIn =
+        reviewUserIsLoggedIn();
+
+    guestGroup.hidden =
+        loggedIn;
+
+    guestNameInput.required =
+        !loggedIn;
+
+    if (loggedIn) {
+
+        guestNameInput.value = "";
+
+        return;
+
+    }
+
+    if (!guestNameInput.value.trim()) {
+
+        guestNameInput.value =
+            localStorage.getItem(
+                GUEST_REVIEWER_NAME_KEY
+            ) || "";
+
+    }
+
+}
+
+
+// ===============================
+// Open Review Modal
+// ===============================
+
+function openReviewModal(reviewId = null) {
 
     const modal =
         document.getElementById("reviewModal");
@@ -1075,6 +1266,23 @@ function openReviewModal(reviewId = null) {
 
 
         editingReviewId = review.id;
+
+        updateReviewerIdentityFields();
+
+        const guestNameInput =
+            document.getElementById(
+                "guestReviewerName"
+            );
+
+        if (
+            guestNameInput &&
+            review.isGuest
+        ) {
+
+            guestNameInput.value =
+                review.userName || "";
+
+        }
 
         document.getElementById(
             "reviewDestination"
@@ -1242,6 +1450,9 @@ function resetReviewForm() {
         `;
 
     }
+
+
+    updateReviewerIdentityFields();
 
 }
 
@@ -1512,15 +1723,6 @@ function submitReview(event) {
     event.preventDefault();
 
 
-    if (!requireReviewLogin(
-        "Please login to publish a review."
-    )) {
-
-        return;
-
-    }
-
-
     const destination =
         document.getElementById(
             "reviewDestination"
@@ -1547,6 +1749,45 @@ function submitReview(event) {
         document.getElementById(
             "reviewDescription"
         ).value.trim();
+
+    const loggedIn =
+        reviewUserIsLoggedIn();
+
+    const guestNameInput =
+        document.getElementById(
+            "guestReviewerName"
+        );
+
+    const guestName =
+        guestNameInput
+            ? guestNameInput.value.trim()
+            : "";
+
+
+    if (!loggedIn) {
+
+        if (guestName.length < 2) {
+
+            alert(
+                "Please enter your name before publishing the review."
+            );
+
+            if (guestNameInput) {
+
+                guestNameInput.focus();
+
+            }
+
+            return;
+
+        }
+
+        localStorage.setItem(
+            GUEST_REVIEWER_NAME_KEY,
+            guestName
+        );
+
+    }
 
 
     if (!destination) {
@@ -1620,7 +1861,9 @@ function submitReview(event) {
 
 
     const currentUser =
-        getReviewCurrentUser();
+        loggedIn
+            ? getReviewCurrentUser()
+            : null;
 
     let reviews =
         getReviews();
@@ -1663,9 +1906,42 @@ function submitReview(event) {
         }
 
 
+        const existingReview =
+            reviews[reviewIndex];
+
         reviews[reviewIndex] = {
 
-            ...reviews[reviewIndex],
+            ...existingReview,
+
+            userName:
+                existingReview.isGuest
+                    ? guestName
+                    : (
+                        currentUser?.name ||
+                        existingReview.userName ||
+                        "Traveler"
+                    ),
+
+            userUsername:
+                existingReview.isGuest
+                    ? "Guest Traveler"
+                    : (
+                        currentUser?.username ||
+                        existingReview.userUsername ||
+                        "traveler"
+                    ),
+
+            userImage:
+                existingReview.isGuest
+                    ? (
+                        existingReview.userImage ||
+                        DEFAULT_PROFILE_IMAGE
+                    )
+                    : (
+                        currentUser?.image ||
+                        existingReview.userImage ||
+                        DEFAULT_PROFILE_IMAGE
+                    ),
 
             destination: destination,
 
@@ -1698,19 +1974,50 @@ function submitReview(event) {
 
             id: Date.now(),
 
-            userId: currentUser.id,
+            userId:
+                loggedIn
+                    ? currentUser.id
+                    : null,
 
-            userEmail: currentUser.email,
+            userEmail:
+                loggedIn
+                    ? currentUser.email
+                    : "",
 
             userName:
-                currentUser.name ||
-                "Traveler",
+                loggedIn
+                    ? (
+                        currentUser.name ||
+                        "Traveler"
+                    )
+                    : guestName,
+
+            userUsername:
+                loggedIn
+                    ? (
+                        currentUser.username ||
+                        "traveler"
+                    )
+                    : "Guest Traveler",
 
             userImage:
-                currentUser.image ||
-                DEFAULT_PROFILE_IMAGE,
+                loggedIn
+                    ? (
+                        currentUser.image ||
+                        DEFAULT_PROFILE_IMAGE
+                    )
+                    : DEFAULT_PROFILE_IMAGE,
 
-            verified: true,
+            verified:
+                loggedIn,
+
+            isGuest:
+                !loggedIn,
+
+            guestOwnerId:
+                loggedIn
+                    ? null
+                    : getGuestReviewerId(),
 
             destination: destination,
 
@@ -1742,23 +2049,29 @@ function submitReview(event) {
         if (!saveReviews(reviews)) return;
 
 
-        addReviewNotification(
+        if (loggedIn) {
 
-            "review",
+            addReviewNotification(
 
-            "Review Published",
+                "review",
 
-            "Your review for " +
-            destination +
-            " was published successfully.",
+                "Review Published",
 
-            "fa-star"
+                "Your review for " +
+                destination +
+                " was published successfully.",
 
-        );
+                "fa-star"
+
+            );
+
+        }
 
 
         alert(
-            "Review published successfully!"
+            loggedIn
+                ? "Review published successfully!"
+                : "Guest review published successfully!"
         );
 
     }
@@ -1989,15 +2302,6 @@ function addReviewComment(reviewId) {
 // ===============================
 
 function deleteReview(reviewId) {
-
-    if (!requireReviewLogin(
-        "Please login to delete your review."
-    )) {
-
-        return;
-
-    }
-
 
     let reviews =
         getReviews();
@@ -2367,6 +2671,35 @@ function setupReviewEvents() {
         });
 
 
+    const guestReviewerName =
+        document.getElementById(
+            "guestReviewerName"
+        );
+
+    if (guestReviewerName) {
+
+        guestReviewerName.addEventListener(
+            "input",
+            function () {
+
+                const cleanName =
+                    guestReviewerName.value.trim();
+
+                if (cleanName) {
+
+                    localStorage.setItem(
+                        GUEST_REVIEWER_NAME_KEY,
+                        cleanName
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
     const searchInput =
         document.getElementById(
             "reviewSearchInput"
@@ -2520,6 +2853,8 @@ document.addEventListener(
         updateReviewDescriptionCounter();
 
         updateReviewImagePreview();
+
+        updateReviewerIdentityFields();
 
         refreshReviewsPage();
 

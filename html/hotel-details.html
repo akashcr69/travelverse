@@ -1,6 +1,6 @@
 <!-- ==========================================================
-Module 6 : hotel-details.html
-TravelVerse - Hotel Details Page
+Module 6: hotel-details.html
+TravelVerse - Dynamic Hotel Details Page
 ========================================================== -->
 
 <!DOCTYPE html>
@@ -8,48 +8,104 @@ TravelVerse - Hotel Details Page
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>TravelVerse | Hotel Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/css/hotel-details.css">
-<link rel="stylesheet" href="/css/theme.css">
+    <title id="pageTitle">
+        TravelVerse | Hotel Details
+    </title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Page CSS -->
+
+    <link rel="stylesheet" href="/css/hotel-details.css">
+
+
+    <!-- Global Theme CSS -->
+
+    <link rel="stylesheet" href="/css/theme.css">
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVBAR ================= -->
 
 <header>
 
-    <div class="logo">
-        🌍 TravelVerse
-    </div>
+    <a href="index.html" class="logo">
+
+        <i class="fa-solid fa-earth-americas"></i>
+
+        TravelVerse
+
+    </a>
+
 
     <nav>
 
-        <a href="home.html">Home</a>
+        <a href="home.html">
+            Home
+        </a>
 
-        <a href="places.html">Places</a>
+        <a href="places.html">
+            Places
+        </a>
 
-        <a href="upload.html">Upload Review</a>
+        <a href="hotels.html" class="active">
+            Hotels
+        </a>
 
-        <a href="profile.html">Profile</a>
+        <a href="upload.html">
+            Create Post
+        </a>
 
-        <a href="notifications.html">Notifications</a>
+        <a href="reviews.html">
+            Reviews
+        </a>
 
-        <a href="saved.html">Saved</a>
+        <a href="profile.html">
+            Profile
+        </a>
 
-        <a href="settings.html">Settings</a>
+        <a href="notifications.html">
+            Notifications
+        </a>
 
-        <a href="login.html">Logout</a>
+        <a href="saved.html">
+            Saved
+        </a>
+
+        <a href="settings.html">
+            Settings
+        </a>
+
+        <a
+            href="login.html"
+            onclick="logoutUser(event)">
+
+            Logout
+
+        </a>
 
     </nav>
 
@@ -57,24 +113,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-<!-- ================= COVER ================= -->
+<!-- ================= HOTEL NOT FOUND ================= -->
 
-<section class="cover">
+<section
+    id="hotelNotFound"
+    class="hotel-not-found"
+    hidden>
 
-    <img
-    id="hotelCover"
-    src="assets/images/hotel-cover.jpg"
-    alt="Hotel">
+    <div>
 
-    <div class="cover-overlay">
+        <i class="fa-solid fa-hotel"></i>
 
-        <h1 id="hotelName">
-            Hotel Sea Crown
+        <h1>
+            Hotel Not Found
         </h1>
 
-        <p id="touristSpot">
-            📍 Cox's Bazar, Bangladesh
+        <p>
+            The selected hotel information is unavailable.
         </p>
+
+        <a href="hotels.html">
+            Back to Hotels
+        </a>
 
     </div>
 
@@ -82,59 +142,292 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-<!-- ================= MAIN ================= -->
+<!-- ================= HOTEL DETAILS CONTENT ================= -->
+
+<main id="hotelDetailsContent">
+
+
+<!-- ================= COVER ================= -->
+
+<section class="cover">
+
+    <img
+        id="hotelCover"
+        src="/assets/images/hotel-cover.jpg"
+        alt="Hotel cover image"
+        onerror="this.onerror=null; this.src='/assets/images.jpeg';">
+
+
+    <div class="cover-overlay">
+
+        <div class="cover-content">
+
+            <a
+                href="hotels.html"
+                id="backToHotels"
+                class="back-hotels-link">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Hotels
+
+            </a>
+
+
+            <div
+                class="hotel-star-badge"
+                id="hotelStarBadge">
+
+                <i class="fa-solid fa-star"></i>
+
+                <span id="hotelStar">
+                    0 Star
+                </span>
+
+            </div>
+
+
+            <h1 id="hotelName">
+                Hotel Name
+            </h1>
+
+
+            <p id="touristSpot">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Destination, Bangladesh
+
+            </p>
+
+
+            <div class="cover-meta">
+
+                <span id="coverRating">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    0.0 Rating
+
+                </span>
+
+
+                <span id="coverBudget">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    Budget Type
+
+                </span>
+
+
+                <span id="coverPrice">
+
+                    <i class="fa-solid fa-tag"></i>
+
+                    0 BDT / Night
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MAIN INFORMATION ================= -->
 
 <div class="container">
 
 
-
-<!-- LEFT -->
+<!-- ================= LEFT SECTION ================= -->
 
 <div class="left-section">
 
 
+<!-- HOTEL INFORMATION -->
 
 <div class="hotel-card">
 
     <h2>
+
+        <i class="fa-solid fa-circle-info"></i>
+
         Hotel Information
+
     </h2>
+
 
     <div class="info">
 
         <p>
-            🏨 Hotel Name
+
+            <span class="info-label">
+
+                <i class="fa-solid fa-hotel"></i>
+
+                Hotel Name
+
+            </span>
+
             <span id="infoHotel">
-                Hotel Sea Crown
+                Hotel Name
             </span>
+
         </p>
 
+
         <p>
-            📍 District
+
+            <span class="info-label">
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                Destination
+
+            </span>
+
+            <span id="infoDestination">
+                Destination
+            </span>
+
+        </p>
+
+
+        <p>
+
+            <span class="info-label">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Full Location
+
+            </span>
+
             <span id="infoDistrict">
-                Cox's Bazar
+                Location
             </span>
+
         </p>
 
-        <p>
-            📞 Phone
-            <span>
-                +8801700000000
-            </span>
-        </p>
 
         <p>
-            🌐 Website
-            <a href="#">
-                www.seacrown.com
+
+            <span class="info-label">
+
+                <i class="fa-solid fa-star"></i>
+
+                Hotel Category
+
+            </span>
+
+            <span id="infoStar">
+                0 Star Hotel
+            </span>
+
+        </p>
+
+
+        <p>
+
+            <span class="info-label">
+
+                <i class="fa-solid fa-wallet"></i>
+
+                Budget Type
+
+            </span>
+
+            <span id="infoBudget">
+                Budget
+            </span>
+
+        </p>
+
+
+        <p>
+
+            <span class="info-label">
+
+                <i class="fa-solid fa-phone"></i>
+
+                Phone
+
+            </span>
+
+            <a
+                href="#"
+                id="hotelPhone">
+
+                Not available
+
             </a>
+
         </p>
+
 
         <p>
-            💰 Cost
-            <span id="hotelPrice">
-                4500 BDT / Night
+
+            <span class="info-label">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                Email
+
             </span>
+
+            <a
+                href="#"
+                id="hotelEmail">
+
+                Not available
+
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <span class="info-label">
+
+                <i class="fa-solid fa-globe"></i>
+
+                Website
+
+            </span>
+
+            <a
+                href="#"
+                id="hotelWebsite"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Not available
+
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <span class="info-label">
+
+                <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+
+                Cost Per Night
+
+            </span>
+
+            <span id="hotelPrice">
+                0 BDT / Night
+            </span>
+
         </p>
 
     </div>
@@ -143,30 +436,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
+<!-- FACILITIES -->
 
 <div class="hotel-card">
 
     <h2>
+
+        <i class="fa-solid fa-bell-concierge"></i>
+
         Facilities
+
     </h2>
 
-    <div class="facilities">
 
-        <div>✅ Free WiFi</div>
+    <div
+        class="facilities"
+        id="hotelFacilities">
 
-        <div>✅ Parking</div>
-
-        <div>✅ Swimming Pool</div>
-
-        <div>✅ Restaurant</div>
-
-        <div>✅ Sea View</div>
-
-        <div>✅ Breakfast</div>
-
-        <div>✅ Air Condition</div>
-
-        <div>✅ Family Room</div>
+        <!-- Facilities will be created by hotel-details.js -->
 
     </div>
 
@@ -174,37 +461,65 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-
+<!-- DESCRIPTION -->
 
 <div class="hotel-card">
 
     <h2>
+
+        <i class="fa-solid fa-align-left"></i>
+
         Description
+
     </h2>
 
-    <p>
-        Enjoy a luxurious stay with sea view rooms,
-        excellent service and modern facilities.
 
-        Travelers can upload their own review and
-        hotel photos from the Upload Review page.
+    <p id="hotelDescription">
+
+        Hotel description will appear here.
+
     </p>
 
 </div>
 
 
 
+<!-- ROOM INFORMATION -->
+
+<div
+    class="hotel-card"
+    id="roomInformationCard">
+
+    <h2>
+
+        <i class="fa-solid fa-bed"></i>
+
+        Room Information
+
+    </h2>
+
+
+    <div
+        class="room-types"
+        id="hotelRoomTypes">
+
+        <!-- Room information will be created dynamically -->
+
+    </div>
+
+</div>
+
+
 </div>
 
 
 
-
-
-<!-- RIGHT -->
+<!-- ================= RIGHT SECTION ================= -->
 
 <div class="right-section">
 
 
+<!-- RATING -->
 
 <div class="rating-box">
 
@@ -212,48 +527,56 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         Community Rating
     </h2>
 
+
     <h1 id="averageRating">
-        4.8 ⭐
+        0.0 ⭐
     </h1>
 
+
     <p>
+
         Based on
 
         <span id="reviewCount">
             0
         </span>
 
-        Reviews
+        reviews
+
     </p>
 
 </div>
 
 
 
-<!-- ================= SAVE HOTEL BOX ================= -->
+<!-- SAVE HOTEL -->
 
 <div class="save-hotel-box">
 
     <h2>
+
+        <i class="fa-solid fa-bookmark"></i>
+
         Save This Hotel
+
     </h2>
+
 
     <p>
         Keep this hotel in your saved collection for later.
     </p>
 
-    <button 
-    class="save-hotel-btn"
-    onclick="saveHotel(this)"
-    data-id="hotel-sea-crown"
-    data-name="Hotel Sea Crown"
-    data-location="Cox's Bazar"
-    data-rating="4.8"
-    data-price="4500 BDT / Night"
-    data-image="assets/images/hotel-cover.jpg">
 
-        <i class="fa-solid fa-bookmark"></i>
-        Save Hotel
+    <button
+        type="button"
+        class="save-hotel-btn"
+        id="saveHotelBtn">
+
+        <i class="fa-regular fa-bookmark"></i>
+
+        <span>
+            Save Hotel
+        </span>
 
     </button>
 
@@ -261,32 +584,61 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
+<!-- PRICE SUMMARY -->
 
+<div class="save-hotel-box hotel-price-summary">
+
+    <h2>
+        Price Summary
+    </h2>
+
+
+    <div class="price-summary-row">
+
+        <span>
+            Starting from
+        </span>
+
+        <strong id="summaryPrice">
+            0 BDT
+        </strong>
+
+    </div>
+
+
+    <p>
+        Price may vary depending on room type, season and availability.
+    </p>
+
+</div>
+
+
+
+<!-- GALLERY -->
 
 <div class="gallery">
 
     <h2>
+
+        <i class="fa-solid fa-images"></i>
+
         Gallery
+
     </h2>
 
-    <div class="gallery-grid">
 
-        <img src="assets/images/hotel1.jpg">
+    <div
+        class="gallery-grid"
+        id="hotelGallery">
 
-        <img src="assets/images/hotel2.jpg">
-
-        <img src="assets/images/hotel3.jpg">
-
-        <img src="assets/images/hotel4.jpg">
+        <!-- Gallery images will be created by hotel-details.js -->
 
     </div>
 
 </div>
 
 
-
 </div>
-
 
 
 </div>
@@ -297,107 +649,51 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <section class="reviews-section">
 
-<h2>
-    Traveler Reviews
-</h2>
-
-<div id="reviewContainer">
-
-
-
-<!-- Review Card -->
-
-<div class="review-card">
-
-    <div class="review-header">
-
-        <img src="assets/images/user1.jpg">
+    <div class="review-section-heading">
 
         <div>
 
-            <h3>
-                Akash
-            </h3>
+            <span>
+                Guest Experiences
+            </span>
 
-            <p>
-                ⭐⭐⭐⭐⭐
-            </p>
-
-        </div>
-
-    </div>
-
-    <p>
-        Excellent hotel.
-
-        Very clean rooms with an amazing sea view.
-
-        Highly recommended.
-    </p>
-
-    <div class="review-footer">
-
-        <button class="edit-btn">
-            Edit
-        </button>
-
-        <button class="delete-btn">
-            Delete
-        </button>
-
-    </div>
-
-</div>
-
-
-
-
-
-<div class="review-card">
-
-    <div class="review-header">
-
-        <img src="assets/images/user2.jpg">
-
-        <div>
-
-            <h3>
-                Rahim
-            </h3>
-
-            <p>
-                ⭐⭐⭐⭐☆
-            </p>
+            <h2>
+                Traveler Reviews
+            </h2>
 
         </div>
 
-    </div>
 
-    <p>
-        Food quality was very good.
-
-        Staff were friendly.
-    </p>
-
-    <div class="review-footer">
-
-        <button class="edit-btn">
-            Edit
-        </button>
-
-        <button class="delete-btn">
-            Delete
-        </button>
+        <p id="reviewSummaryText">
+            No reviews added yet.
+        </p>
 
     </div>
 
-</div>
+
+    <div id="reviewContainer">
+
+        <!-- Reviews will be loaded dynamically -->
+
+    </div>
 
 
+    <div
+        class="no-hotel-reviews"
+        id="noReviewsMessage"
+        hidden>
 
+        <i class="fa-regular fa-comment-dots"></i>
 
+        <h3>
+            No Reviews Yet
+        </h3>
 
-</div>
+        <p>
+            Be the first traveler to share an experience about this hotel.
+        </p>
+
+    </div>
 
 </section>
 
@@ -407,44 +703,77 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <section class="quick-review">
 
-<h2>
-    Add Another Review
-</h2>
+    <h2>
 
-<textarea
-id="newReview"
-placeholder="Write your experience...">
-</textarea>
+        <i class="fa-solid fa-pen-to-square"></i>
 
-<select id="newRating">
+        Add Your Review
 
-    <option value="5">
-        ⭐⭐⭐⭐⭐
-    </option>
+    </h2>
 
-    <option value="4">
-        ⭐⭐⭐⭐
-    </option>
 
-    <option value="3">
-        ⭐⭐⭐
-    </option>
+    <p>
+        Share your experience to help other travelers.
+    </p>
 
-    <option value="2">
-        ⭐⭐
-    </option>
 
-    <option value="1">
-        ⭐
-    </option>
+    <div
+        class="review-message"
+        id="reviewMessage"
+        hidden>
 
-</select>
+    </div>
 
-<button id="submitReview">
-    Submit Review
-</button>
+
+    <textarea
+        id="newReview"
+        maxlength="700"
+        placeholder="Write your hotel experience..."></textarea>
+
+
+    <div class="quick-review-actions">
+
+        <select id="newRating">
+
+            <option value="5">
+                ⭐⭐⭐⭐⭐ — Excellent
+            </option>
+
+            <option value="4">
+                ⭐⭐⭐⭐ — Very Good
+            </option>
+
+            <option value="3">
+                ⭐⭐⭐ — Good
+            </option>
+
+            <option value="2">
+                ⭐⭐ — Fair
+            </option>
+
+            <option value="1">
+                ⭐ — Poor
+            </option>
+
+        </select>
+
+
+        <button
+            type="button"
+            id="submitReview">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Submit Review
+
+        </button>
+
+    </div>
 
 </section>
+
+
+</main>
 
 
 
@@ -452,18 +781,22 @@ placeholder="Write your experience...">
 
 <footer>
 
-<p>
-    © 2026 TravelVerse
-
-    Explore • Review • Inspire
-</p>
+    <p>
+        © 2026 TravelVerse | Explore • Review • Inspire
+    </p>
 
 </footer>
 
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script src="/js/theme.js"></script>
+
+<script src="/js/auth.js"></script>
+
 <script src="/js/hotel-details.js"></script>
+
 
 </body>
 
